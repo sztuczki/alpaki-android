@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Alpaki</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--Titles of bottom navigation bar element-->
+    <string name="bottom_navigation_bar_first_element">First</string>
+    <string name="bottom_navigation_bar_second_element">Second</string>
+    <string name="bottom_navigation_bar_third_element">Third</string>
 </resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/firstFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_airline_seat_flat_24"
+        android:title="@string/bottom_navigation_bar_first_element"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/secondFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_accessibility_new_24"
+        android:title="@string/bottom_navigation_bar_second_element"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/thirdFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_blur_circular_24"
+        android:title="@string/bottom_navigation_bar_third_element"
+        app:showAsAction="ifRoom" />
+
+</menu>
