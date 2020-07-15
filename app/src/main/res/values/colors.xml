@@ -4,5 +4,6 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
 
-    <color name="dodgerBlue">#2979FF</color>
+    <color name="eclipse">#3A3A3A</color>
+    <color name="dimGray">#666666</color>
 </resources>

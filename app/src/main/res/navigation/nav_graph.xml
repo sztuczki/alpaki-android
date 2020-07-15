@@ -2,22 +2,28 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/firstFragment">
+    app:startDestination="@id/desktopFragment">
     <fragment
-        android:id="@+id/firstFragment"
-        android:name="com.example.alpaki.presentation.fragments.FirstFragment"
-        android:label="first_fragment"
-        tools:layout="@layout/fragment_first" />
+        android:id="@+id/desktopFragment"
+        android:name="com.example.alpaki.presentation.fragments.DesktopFragment"
+        android:label="desktop_fragment"
+        tools:layout="@layout/fragment_desktop" />
 
     <fragment
-        android:id="@+id/secondFragment"
-        android:name="com.example.alpaki.presentation.fragments.SecondFragment"
-        android:label="second_fragment"
-        tools:layout="@layout/fragment_second" />
+        android:id="@+id/dreamsFragment"
+        android:name="com.example.alpaki.presentation.fragments.DreamsFragment"
+        android:label="dreams_fragment"
+        tools:layout="@layout/fragment_dreams" />
 
     <fragment
-        android:id="@+id/thirdFragment"
-        android:name="com.example.alpaki.presentation.fragments.ThirdFragment"
-        android:label="third_fragment"
-        tools:layout="@layout/fragment_third" />
+        android:id="@+id/tasksFragment"
+        android:name="com.example.alpaki.presentation.fragments.TasksFragment"
+        android:label="tasks_fragment"
+        tools:layout="@layout/fragment_tasks" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.alpaki.presentation.fragments.ProfileFragment"
+        android:label="profileFragment"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

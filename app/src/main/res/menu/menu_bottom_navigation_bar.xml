@@ -3,24 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/firstFragment"
+        android:id="@+id/desktopFragment"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_airline_seat_flat_24"
+        android:icon="@drawable/ic_home"
         android:title="@string/bottom_navigation_bar_first_element"
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/secondFragment"
+        android:id="@+id/dreamsFragment"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_accessibility_new_24"
+        android:icon="@drawable/ic_dreams"
         android:title="@string/bottom_navigation_bar_second_element"
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/thirdFragment"
+        android:id="@+id/tasksFragment"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_blur_circular_24"
+        android:icon="@drawable/ic_tasks"
         android:title="@string/bottom_navigation_bar_third_element"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/profileFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_profile"
+        android:title="@string/bottom_navigation_bar_fourth_element"
         app:showAsAction="ifRoom" />
 
 </menu>

@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.alpaki.R
 
-class ThirdFragment : Fragment() {
+class TasksFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View = inflater.inflate(R.layout.fragment_third, container, false)
+    ): View = inflater.inflate(R.layout.fragment_tasks, container, false)
 }
