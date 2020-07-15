@@ -48,7 +48,6 @@ class NavigationHandler :
         }
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun initNavigation(owner: LifecycleOwner) {
         val activity = owner as FragmentActivity
 
