@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/desktopFragment">
+    <fragment
+        android:id="@+id/desktopFragment"
+        android:name="com.example.alpaki.presentation.fragments.DesktopFragment"
+        android:label="desktop_fragment"
+        tools:layout="@layout/fragment_desktop" />
+
+    <fragment
+        android:id="@+id/dreamsFragment"
+        android:name="com.example.alpaki.presentation.fragments.DreamsFragment"
+        android:label="dreams_fragment"
+        tools:layout="@layout/fragment_dreams" />
+
+    <fragment
+        android:id="@+id/tasksFragment"
+        android:name="com.example.alpaki.presentation.fragments.TasksFragment"
+        android:label="tasks_fragment"
+        tools:layout="@layout/fragment_tasks" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.alpaki.presentation.fragments.ProfileFragment"
+        android:label="profileFragment"
+        tools:layout="@layout/fragment_profile" />
+</navigation>

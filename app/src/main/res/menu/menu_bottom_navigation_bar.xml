@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/desktopFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_desktop"
+        android:title="@string/bottom_navigation_bar_first_element"
+        app:showAsAction="withText" />
+
+    <item
+        android:id="@+id/dreamsFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_dreams"
+        android:title="@string/bottom_navigation_bar_second_element"
+        app:showAsAction="withText" />
+
+    <item
+        android:id="@+id/tasksFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_tasks"
+        android:title="@string/bottom_navigation_bar_third_element"
+        app:showAsAction="withText" />
+
+    <item
+        android:id="@+id/profileFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_profile"
+        android:title="@string/bottom_navigation_bar_fourth_element"
+        app:showAsAction="withText" />
+
+</menu>
