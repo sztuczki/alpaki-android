@@ -8,9 +8,12 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.alpaki.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import dagger.hilt.android.scopes.ActivityScoped
 import kotlinx.android.synthetic.main.activity_main.*
+import javax.inject.Inject
 
-class NavigationHandler :
+@ActivityScoped
+class NavigationHandler @Inject constructor():
     BottomNavigationView.OnNavigationItemReselectedListener,
     BottomNavigationView.OnNavigationItemSelectedListener {
 
