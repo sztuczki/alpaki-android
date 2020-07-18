@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Text" />
+
+    <style name="Text.H1" />
+
+    <style name="Text.H2" />
+
+    <style name="Text.H3">
+        <item name="android:textSize">@dimen/text_h3</item>
+    </style>
+
+    <style name="Text.H3.Medium" />
+
+    <style name="Text.H3.Medium.Primary" />
+
+    <style name="Text.H3.Medium.Primary.Roboto">
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="Text.H5">
+        <item name="android:textSize">@dimen/text_h5</item>
+    </style>
+
+    <style name="Text.H5.Medium" />
+
+    <style name="Text.H5.Medium.Accent" />
+
+    <style name="Text.H5.Medium.Accent.Roboto">
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+
+
+    <style name="Text.S1" />
+
+    <style name="Text.S2" />
+
+    <style name="Text.B1" />
+
+    <style name="Text.B2" />
+</resources>

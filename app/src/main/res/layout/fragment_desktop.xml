@@ -3,18 +3,171 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.fragments.DesktopFragment">
+        android:fillViewport="true">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_desktop"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            tools:context=".presentation.fragments.DesktopFragment">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarDesktop"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:elevation="@dimen/elevation_action_bar"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_mam_marzenie_logo_green" />
+            </androidx.appcompat.widget.Toolbar>
+
+            <TextView
+                android:id="@+id/textDesktopHeaderLatest"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:text="@string/text_desktop_header_latest"
+                android:textAppearance="@style/Text.H3.Medium.Primary.Roboto"
+                app:layout_constraintEnd_toStartOf="@+id/buttonDesktopHeaderLatestMore"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbarDesktop" />
+
+            <Button
+                android:id="@+id/buttonDesktopHeaderLatestMore"
+                style="@style/Button.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:text="@string/button_desktop_more"
+                app:layout_constraintBaseline_toBaselineOf="@id/textDesktopHeaderLatest"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvDesktopLatest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:background="@color/colorAccent"
+                android:minHeight="200dp"
+                android:paddingStart="@dimen/padding_medium"
+                android:paddingEnd="@dimen/padding_medium"
+                app:layout_constraintTop_toBottomOf="@+id/textDesktopHeaderLatest" />
+
+            <TextView
+                android:id="@+id/textDesktopHeaderCategories"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:text="@string/text_desktop_header_categories"
+                android:textAppearance="@style/Text.H3.Medium.Primary.Roboto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvDesktopLatest" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvDesktopCategories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:background="@color/colorAccent"
+                android:minHeight="200dp"
+                android:paddingStart="@dimen/padding_medium"
+                android:paddingEnd="@dimen/padding_medium"
+                app:layout_constraintTop_toBottomOf="@+id/textDesktopHeaderCategories"
+                tools:layout_editor_absoluteX="16dp" />
+
+            <TextView
+                android:id="@+id/textDesktopHeaderSponsors"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:text="@string/text_desktop_header_sponsors"
+                android:textAppearance="@style/Text.H3.Medium.Primary.Roboto"
+                app:layout_constraintEnd_toStartOf="@id/buttonDesktopHeaderSponsorsMore"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvDesktopCategories" />
+
+            <Button
+                android:id="@+id/buttonDesktopHeaderSponsorsMore"
+                style="@style/Button.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:text="@string/button_desktop_more"
+                app:layout_constraintBaseline_toBaselineOf="@id/textDesktopHeaderSponsors"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textDesktopHeaderSponsors"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvDesktopSponsors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:background="@color/colorAccent"
+                android:minHeight="200dp"
+                android:paddingStart="@dimen/padding_medium"
+                android:paddingEnd="@dimen/padding_medium"
+                app:layout_constraintTop_toBottomOf="@+id/textDesktopHeaderSponsors" />
+
+            <TextView
+                android:id="@+id/textDesktopHeaderDreamers"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:text="@string/text_desktop_header_dreamers"
+                android:textAppearance="@style/Text.H3.Medium.Primary.Roboto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvDesktopSponsors" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvDesktopDreamers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:background="@color/colorAccent"
+                android:minHeight="200dp"
+                android:paddingStart="@dimen/padding_medium"
+                android:paddingEnd="@dimen/padding_medium"
+                app:layout_constraintTop_toBottomOf="@+id/textDesktopHeaderDreamers" />
+
+            <TextView
+                android:id="@+id/textDesktopHeaderVolunteers"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:text="@string/text_desktop_header_volunteers"
+                android:textAppearance="@style/Text.H3.Medium.Primary.Roboto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvDesktopDreamers" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvDesktopVolunteers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:background="@color/colorAccent"
+                android:minHeight="200dp"
+                android:paddingStart="@dimen/padding_medium"
+                android:paddingEnd="@dimen/padding_medium"
+                app:layout_constraintTop_toBottomOf="@+id/textDesktopHeaderVolunteers" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>
