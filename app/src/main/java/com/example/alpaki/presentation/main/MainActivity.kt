@@ -2,18 +2,21 @@ package com.example.alpaki.presentation.main
 
 import android.os.Bundle
 import androidx.appcompat.app.ActionBar
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.alpaki.R
 import com.example.alpaki.core.navigation.NavigationHandler
 import com.example.alpaki.core.utils.ExampleInjectedClass
+import com.example.alpaki.core.views.base.BaseActivity
+import com.example.alpaki.databinding.ActivityMainBinding
 import com.example.domain.usecases.ExampleUseCase
 import com.example.domain.usecases.base.None
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity<ActivityMainBinding>() {
+
+    override val layoutId: Int = R.layout.activity_main
 
     @Inject
     lateinit var exampleInjectedClass: ExampleInjectedClass
@@ -29,7 +32,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
         navigationHandler.initNavigation(this)
 
         exampleUseCase(lifecycleScope, None, { result ->

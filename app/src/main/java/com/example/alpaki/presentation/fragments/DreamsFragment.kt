@@ -1,16 +1,10 @@
 package com.example.alpaki.presentation.fragments
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import com.example.alpaki.R
+import com.example.alpaki.core.views.base.BaseFragment
+import com.example.alpaki.databinding.FragmentDreamsBinding
 
-class DreamsFragment : Fragment() {
+class DreamsFragment : BaseFragment<FragmentDreamsBinding>() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View = inflater.inflate(R.layout.fragment_dreams, container, false)
+    override val layoutId: Int = R.layout.fragment_dreams
 }
