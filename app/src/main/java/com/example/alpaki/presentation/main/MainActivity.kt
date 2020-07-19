@@ -1,7 +1,6 @@
 package com.example.alpaki.presentation.main
 
 import android.os.Bundle
-import androidx.appcompat.app.ActionBar
 import androidx.lifecycle.lifecycleScope
 import com.example.alpaki.R
 import com.example.alpaki.core.navigation.NavigationHandler
@@ -20,9 +19,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     @Inject
     lateinit var exampleInjectedClass: ExampleInjectedClass
-
-    @Inject
-    lateinit var injectedActionBar: ActionBar
 
     @Inject
     lateinit var navigationHandler: NavigationHandler
