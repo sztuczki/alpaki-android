@@ -3,7 +3,19 @@
 
     <style name="Text" />
 
-    <style name="Text.H1" />
+    <style name="Text.H1">
+        <item name="android:textSize">@dimen/text_h1</item>
+    </style>
+
+    <style name="Text.H1.Normal" />
+
+    <style name="Text.H1.Medium" />
+
+    <style name="Text.H1.Medium.Primary" />
+
+    <style name="Text.H1.Medium.Primary.Roboto">
+        <item name="fontFamily">@font/roboto_medium</item>
+    </style>
 
     <style name="Text.H2" />
 
