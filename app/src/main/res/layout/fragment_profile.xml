@@ -29,7 +29,7 @@
             android:layout_marginHorizontal="120dp"
             android:layout_marginTop="@dimen/margin_xlarge"
             android:text="@string/text_profile_header_title"
-            android:textAppearance="@style/Text.H1.Medium.Primary.Roboto"
+            android:textAppearance="@style/Text.H1.Primary.Roboto.Medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -60,9 +60,9 @@
             android:layout_marginTop="@dimen/margin_medium"
             app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/layoutTextEmail"
             app:passwordToggleEnabled="true"
-            app:passwordToggleTint="@color/dimGray"
-            app:layout_constraintTop_toBottomOf="@+id/layoutTextEmail">
+            app:passwordToggleTint="@color/dimGray">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextPassword"
@@ -86,11 +86,11 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="0dp"
             android:layout_height="30dp"
-            android:gravity="center"
-            android:textColor="@color/pigmentGreen"
-            android:textAppearance="@style/Text.H5.Medium.Accent.Roboto"
             android:layout_marginTop="@dimen/padding_medium"
+            android:gravity="center"
             android:text="@string/text_forgotten_password"
+            android:textAppearance="@style/Text.H5.Accent.Roboto.Medium"
+            android:textColor="@color/pigmentGreen"
             app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
             app:layout_constraintStart_toStartOf="@+id/guidelineStart"
             app:layout_constraintTop_toBottomOf="@+id/buttonLogIn" />
@@ -105,6 +105,5 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
             app:layout_constraintStart_toStartOf="@+id/guidelineStart" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

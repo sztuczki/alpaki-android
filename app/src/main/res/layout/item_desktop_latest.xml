@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_white_12dp_corners"
+        android:padding="@dimen/padding_xsmall">
+
+        <ImageView
+            android:id="@+id/imageItemDesktopLatest"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textItemDesktopLatestDream"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_xsmall"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textAppearance="@style/Text.H5.Primary.Roboto.Regular"
+            app:layout_constraintTop_toBottomOf="@+id/imageItemDesktopLatest"
+            tools:text="Komputer" />
+
+        <TextView
+            android:id="@+id/textItemDesktopLatestDreamer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_xsmall"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textAppearance="@style/Text.H5.Secondary.Roboto.Regular"
+            app:layout_constraintTop_toBottomOf="@+id/textItemDesktopLatestDream"
+            tools:text="Bartosz (11 lat)" />
+
+        <TextView
+            android:id="@+id/textItemDesktopLatestCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:background="@drawable/background_white_smoke_20dp_corners"
+            android:ellipsize="end"
+            android:paddingHorizontal="@dimen/padding_xsmall"
+            android:singleLine="true"
+            android:textAppearance="@style/Text.H5.Secondary.Roboto.Regular"
+            android:textSize="10sp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textItemDesktopLatestDreamer"
+            tools:text="@string/text_desktop_category_gift" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

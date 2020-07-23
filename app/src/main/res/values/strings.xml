@@ -15,6 +15,9 @@
     <string name="text_desktop_header_volunteers">Wolontariusze</string>
     <string name="button_desktop_more">Więcej</string>
 
+    <string name="text_desktop_category_visit">Chcę pojechać</string>
+    <string name="text_desktop_category_gift">Chcę dostać</string>
+
     <!--profile fragment-->
     <string name="text_profile_header_title">Zaloguj się</string>
     <string name="hint_profile_email">Adres email</string>
