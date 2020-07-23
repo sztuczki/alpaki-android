@@ -34,7 +34,7 @@
                 android:layout_marginStart="@dimen/margin_medium"
                 android:layout_marginTop="@dimen/margin_xlarge"
                 android:text="@string/text_desktop_header_latest"
-                android:textAppearance="@style/Text.H3.Medium.Primary.Roboto"
+                android:textAppearance="@style/Text.H3.Primary.Roboto.Medium"
                 app:layout_constraintEnd_toStartOf="@+id/buttonDesktopHeaderLatestMore"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/toolbarDesktop" />
@@ -56,10 +56,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_medium"
                 android:background="@color/colorAccent"
+                android:clipToPadding="false"
                 android:minHeight="200dp"
+                android:orientation="horizontal"
                 android:paddingStart="@dimen/padding_medium"
                 android:paddingEnd="@dimen/padding_medium"
-                app:layout_constraintTop_toBottomOf="@+id/textDesktopHeaderLatest" />
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/textDesktopHeaderLatest"
+                tools:listitem="@layout/item_desktop_latest" />
 
             <TextView
                 android:id="@+id/textDesktopHeaderCategories"
@@ -69,7 +73,7 @@
                 android:layout_marginTop="@dimen/margin_xlarge"
                 android:layout_marginEnd="@dimen/margin_medium"
                 android:text="@string/text_desktop_header_categories"
-                android:textAppearance="@style/Text.H3.Medium.Primary.Roboto"
+                android:textAppearance="@style/Text.H3.Primary.Roboto.Medium"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/rvDesktopLatest" />
@@ -93,7 +97,7 @@
                 android:layout_marginStart="@dimen/margin_medium"
                 android:layout_marginTop="@dimen/margin_xlarge"
                 android:text="@string/text_desktop_header_sponsors"
-                android:textAppearance="@style/Text.H3.Medium.Primary.Roboto"
+                android:textAppearance="@style/Text.H3.Primary.Roboto.Medium"
                 app:layout_constraintEnd_toStartOf="@id/buttonDesktopHeaderSponsorsMore"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/rvDesktopCategories" />
@@ -129,7 +133,7 @@
                 android:layout_marginTop="@dimen/margin_xlarge"
                 android:layout_marginEnd="@dimen/margin_medium"
                 android:text="@string/text_desktop_header_dreamers"
-                android:textAppearance="@style/Text.H3.Medium.Primary.Roboto"
+                android:textAppearance="@style/Text.H3.Primary.Roboto.Medium"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/rvDesktopSponsors" />
@@ -153,7 +157,7 @@
                 android:layout_marginTop="@dimen/margin_xlarge"
                 android:layout_marginEnd="@dimen/margin_medium"
                 android:text="@string/text_desktop_header_volunteers"
-                android:textAppearance="@style/Text.H3.Medium.Primary.Roboto"
+                android:textAppearance="@style/Text.H3.Primary.Roboto.Medium"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/rvDesktopDreamers" />
