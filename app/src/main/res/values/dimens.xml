@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <dimen name="text_h1">30sp</dimen>
     <dimen name="text_h3">18sp</dimen>
+    <dimen name="text_h4">16sp</dimen>
     <dimen name="text_h5">14sp</dimen>
 
     <dimen name="padding_xxlarge">64dp</dimen>
@@ -22,4 +24,8 @@
     <dimen name="margin_xxsmall">4dp</dimen>
 
     <dimen name="elevation_action_bar">4dp</dimen>
+
+    <dimen name="radius_button">10dp</dimen>
+
+    <dimen name="guideline_vertical_size">14dp</dimen>
 </resources>

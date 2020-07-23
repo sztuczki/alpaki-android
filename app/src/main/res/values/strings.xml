@@ -1,15 +1,25 @@
 <resources>
     <string name="app_name">Alpaki</string>
 
+    <!--bottom navigation bar-->
     <string name="bottom_navigation_bar_first_element">Pulpit</string>
     <string name="bottom_navigation_bar_second_element">Marzenia</string>
     <string name="bottom_navigation_bar_third_element">Zadania</string>
     <string name="bottom_navigation_bar_fourth_element">Profil</string>
 
+    <!--desktop fragment-->
     <string name="text_desktop_header_latest">Najnowsze marzenia</string>
     <string name="text_desktop_header_categories">Kategorie marzeń</string>
     <string name="text_desktop_header_sponsors">Sponsorzy</string>
     <string name="text_desktop_header_dreamers">Marzyciele</string>
     <string name="text_desktop_header_volunteers">Wolontariusze</string>
     <string name="button_desktop_more">Więcej</string>
+
+    <!--profile fragment-->
+    <string name="text_profile_header_title">Zaloguj się</string>
+    <string name="hint_profile_email">Adres email</string>
+    <string name="hint_profile_password">Hasło</string>
+    <string name="button_profile_login">Zaloguj się</string>
+    <string name="button_profile_register">Zarejestruj się</string>
+    <string name="text_forgotten_password">Nie pamiętasz hasła?</string>
 </resources>
