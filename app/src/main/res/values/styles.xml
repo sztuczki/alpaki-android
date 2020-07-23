@@ -8,12 +8,12 @@
     </style>
 
     <style name="Button.Text.Color.Green" parent="TextAppearance.AppCompat.Widget.Button.Colored">
-        <item name="android:background">@drawable/background_button_rounded_corners</item>
+        <item name="android:background">@drawable/background_button_primary</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="Button.Text.Color.Eclipse" parent="TextAppearance.AppCompat.Widget.Button.Colored">
-        <item name="android:background">@drawable/background_button_rounded_corners</item>
+        <item name="android:background">@drawable/background_button_primary</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:backgroundTint">@color/eclipse</item>
     </style>

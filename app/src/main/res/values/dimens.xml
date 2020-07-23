@@ -25,7 +25,7 @@
 
     <dimen name="elevation_action_bar">4dp</dimen>
 
-    <dimen name="rounded_corner_value">10dp</dimen>
+    <dimen name="radius_button">10dp</dimen>
 
     <dimen name="guideline_vertical_size">14dp</dimen>
 </resources>

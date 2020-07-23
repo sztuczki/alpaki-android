@@ -5,7 +5,7 @@
             <item>
                 <shape android:shape="rectangle">
                     <solid android:color="@color/pigmentGreen" />
-                    <corners android:radius="@dimen/rounded_corner_value" />
+                    <corners android:radius="@dimen/radius_button" />
                 </shape>
             </item>
         </ripple>
