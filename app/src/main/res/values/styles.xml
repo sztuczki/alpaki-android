@@ -10,22 +10,22 @@
 
     <style name="Button.Text.Color.Green" parent="TextAppearance.AppCompat.Widget.Button.Colored">
         <item name="android:background">@drawable/background_button_primary</item>
+        <item name="android:textAppearance">@style/Text.H5.Accent.Roboto.Regular.Bold</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="Button.Text.Color.Eclipse" parent="TextAppearance.AppCompat.Widget.Button.Colored">
         <item name="android:background">@drawable/background_button_primary</item>
+        <item name="android:textAppearance">@style/Text.H5.Accent.Roboto.Regular.Bold</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:backgroundTint">@color/eclipse</item>
     </style>
 
-    <style name="TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+    <style name="TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
         <item name="boxBackgroundColor">@color/whiteSmoke</item>
-        <item name="boxBackgroundMode">outline</item>
-        <item name="boxStrokeWidth">2dp</item>
-        <item name="boxStrokeColor">@drawable/selector_text_input_layout_box_colors</item>
         <item name="hintTextAppearance">@style/TextInputLayout.HintText</item>
         <item name="android:textColorHint">@color/dimGray</item>
+        <item name="android:textAppearance">@style/Text.H5.Accent.Roboto.Regular</item>
         <item name="errorTextAppearance">@style/TextInputLayout.ErrorText</item>
     </style>
 
@@ -38,5 +38,11 @@
         <item name="android:textColor">@drawable/selector_hint_color</item>
         <item name="android:textSize">@dimen/text_h4</item>
         <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TitleBar">
+        <item name="android:paddingStart">@dimen/padding_title_bar</item>
+        <item name="android:paddingTop">@dimen/padding_title_bar</item>
+        <item name="android:paddingEnd">@dimen/padding_title_bar</item>
     </style>
 </resources>
