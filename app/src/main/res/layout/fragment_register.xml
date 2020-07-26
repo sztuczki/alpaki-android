@@ -148,7 +148,7 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/textLackOfActivationCode"
-                style="@style/Text.H6.Primary.Roboto.Regular"
+                android:textAppearance="@style/Text.H6.Primary.Roboto.Regular"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/text_register_lack_of_activation_code"
@@ -169,7 +169,7 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/textTerms"
-                style="@style/Text.H6.Primary.Roboto.Regular"
+                android:textAppearance="@style/Text.H6.Primary.Roboto.Regular"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_medium"
