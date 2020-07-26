@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="sponsor"
+            type="com.example.domain.models.Sponsor" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="144dp"
+        android:layout_height="112dp"
+        android:background="@drawable/background_white_12dp_corners">
+
+        <ImageView
+            android:id="@+id/imageItemDesktopSponsorLogo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_medium" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_xsmall"
+            android:src="@{ sponsor.isFavourite ? @drawable/ic_favourite_malachite : @drawable/ic_favourite_white_smoke }"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_favourite_white_smoke" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
