@@ -14,8 +14,10 @@
     <color name="white">#FFFFFF</color>
     <color name="whiteSmoke">#F2F2F2</color>
     <color name="black">#000000</color>
+    <color name="solitude">#F8F8FA</color>
 
     <color name="bittersweet">#FF605D</color>
+    <color name="burnt_sienna">#EB5757</color>
     <color name="transparent">#000000</color>
 
     <!--    components-->

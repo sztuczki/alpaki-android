@@ -15,8 +15,12 @@
     <string name="text_desktop_header_volunteers">Wolontariusze</string>
     <string name="button_desktop_more">Więcej</string>
 
-    <string name="text_desktop_category_visit">Chcę pojechać</string>
-    <string name="text_desktop_category_gift">Chcę dostać</string>
+    <string name="text_desktop_category_visit">Chcę\npojechać</string>
+    <string name="text_desktop_category_gift">Chcę\ndostać</string>
+    <string name="text_desktop_category_meet">Chcę\npoznać</string>
+    <string name="text_desktop_category_become">Chcę\nbyć</string>
+    <string name="text_desktop_category_give">Chcę\ndać</string>
+    <string name="text_desktop_category_quick_mode">Tryb\nszybki</string>
 
     <!--profile fragment-->
     <string name="text_profile_header_title">Zaloguj się</string>

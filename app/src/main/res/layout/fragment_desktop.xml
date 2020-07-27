@@ -11,6 +11,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            tools:background="@color/solitude"
             tools:context=".presentation.fragments.DesktopFragment">
 
             <androidx.appcompat.widget.Toolbar
@@ -55,7 +56,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_medium"
-                android:background="@color/colorAccent"
                 android:clipToPadding="false"
                 android:minHeight="200dp"
                 android:orientation="horizontal"
@@ -83,12 +83,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_medium"
-                android:background="@color/colorAccent"
-                android:minHeight="200dp"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
                 android:paddingStart="@dimen/padding_medium"
                 android:paddingEnd="@dimen/padding_medium"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintTop_toBottomOf="@+id/textDesktopHeaderCategories"
-                tools:layout_editor_absoluteX="16dp" />
+                tools:layout_editor_absoluteX="16dp"
+                tools:listitem="@layout/item_desktop_category" />
 
             <TextView
                 android:id="@+id/textDesktopHeaderSponsors"
