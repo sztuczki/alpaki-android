@@ -1,6 +1,7 @@
 package com.example.alpaki.core.navigation
 
 import android.view.MenuItem
+import androidx.activity.addCallback
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.LifecycleOwner
 import androidx.navigation.NavController
@@ -13,10 +14,11 @@ import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
 @ActivityScoped
-class NavigationHandler @Inject constructor():
+class NavigationHandler @Inject constructor() :
     BottomNavigationView.OnNavigationItemReselectedListener,
     BottomNavigationView.OnNavigationItemSelectedListener {
 
+    private var activity: FragmentActivity? = null
     private var navigationController: NavController? = null
     private var viewBottomNavigation: BottomNavigationView? = null
 
@@ -49,8 +51,13 @@ class NavigationHandler @Inject constructor():
         }
     }
 
-    fun initNavigation(owner: LifecycleOwner) {
+    fun init(owner: LifecycleOwner) {
         val activity = owner as FragmentActivity
+        this.activity = activity
+
+        activity.onBackPressedDispatcher.addCallback(activity) {
+            handleBackPress()
+        }
 
         navigationController = activity.findNavController(R.id.fragmentNavHost)
         viewBottomNavigation = activity.bottomNavigationView
@@ -63,5 +70,18 @@ class NavigationHandler @Inject constructor():
             requireNotNull(viewBottomNavigation),
             requireNotNull(navigationController)
         )
+    }
+
+    private fun handleBackPress() = with(requireNotNull(navigationController)) {
+        val activity = requireNotNull(activity)
+        when (currentDestination?.id) {
+            R.id.desktopFragment -> activity.finish()
+            R.id.dreamsFragment -> popBackStack(R.id.desktopFragment, false)
+            R.id.tasksFragment -> popBackStack(R.id.desktopFragment, false)
+            R.id.profileFragment -> popBackStack(R.id.desktopFragment, false)
+            R.id.registerFragment -> popBackStack(R.id.profileFragment, false)
+            else -> if (popBackStack().not()) activity.finish()
+        }
+        Unit
     }
 }
