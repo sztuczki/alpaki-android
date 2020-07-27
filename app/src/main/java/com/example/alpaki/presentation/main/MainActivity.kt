@@ -28,7 +28,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        navigationHandler.initNavigation(this)
+        navigationHandler.init(this)
 
         exampleUseCase(lifecycleScope, None, { result ->
             handleResult(result)

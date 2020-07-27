@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Alpaki</string>
 
     <!--bottom navigation bar-->
@@ -24,9 +24,22 @@
 
     <!--profile fragment-->
     <string name="text_profile_header_title">Zaloguj się</string>
-    <string name="hint_profile_email">Adres email</string>
+    <string name="hint_profile_email" tools:ignore="Typos">Adres email</string>
     <string name="hint_profile_password">Hasło</string>
     <string name="button_profile_login">Zaloguj się</string>
     <string name="button_profile_register">Zarejestruj się</string>
     <string name="text_forgotten_password">Nie pamiętasz hasła?</string>
+
+    <!--register first fragment-->
+    <string name="title_register_register">Zarejestruj się</string>
+    <string name="hint_register_name">Imię</string>
+    <string name="hint_register_surname">Nazwisko</string>
+    <string name="hint_register_phone">Nr telefonu</string>
+    <string name="hint_register_email" tools:ignore="Typos">Adres email</string>
+    <string name="hint_register_password">Hasło</string>
+    <string name="hint_register_activation_code">Kod aktywacyjny</string>
+    <string name="text_register_lack_of_activation_code">Nie masz kodu aktywacyjnego? Skontaktuj się ze swoim koordynatorem.</string>
+    <string name="text_register_terms">Zakładając konto, akceptujesz Regulamin oraz Politykę Prywatności Fundacji Mam Marzenie.</string>
+    <string name="button_register_register">Zarejestruj się</string>
+
 </resources>

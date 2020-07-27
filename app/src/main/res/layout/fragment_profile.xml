@@ -6,6 +6,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        tools:background="@color/white"
+        android:fitsSystemWindows="true"
         tools:context=".presentation.profile.ProfileFragment">
 
         <androidx.constraintlayout.widget.Guideline
@@ -28,18 +30,19 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="120dp"
             android:layout_marginTop="@dimen/margin_xlarge"
+            android:maxLines="1"
             android:text="@string/text_profile_header_title"
-            android:textAppearance="@style/Text.H1.Primary.Roboto.Medium"
+            android:textAppearance="@style/Text.H1.Primary.Roboto.Regular.Bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layoutTextEmail"
-            style="@style/TextInputLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_xmedium"
+            android:theme="@style/TextInputLayout"
             app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
             app:layout_constraintTop_toBottomOf="@+id/appCompatTextView">
@@ -54,10 +57,10 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layoutTextPassword"
-            style="@style/TextInputLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_medium"
+            android:theme="@style/TextInputLayout"
             app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
             app:layout_constraintTop_toBottomOf="@+id/layoutTextEmail"
@@ -87,10 +90,11 @@
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_marginTop="@dimen/padding_medium"
+            android:clickable="true"
+            android:focusable="true"
             android:gravity="center"
             android:text="@string/text_forgotten_password"
-            android:textAppearance="@style/Text.H5.Accent.Roboto.Medium"
-            android:textColor="@color/pigmentGreen"
+            android:textAppearance="@style/Text.H5.Accent.Roboto.Regular"
             app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
             app:layout_constraintStart_toStartOf="@+id/guidelineStart"
             app:layout_constraintTop_toBottomOf="@+id/buttonLogIn" />

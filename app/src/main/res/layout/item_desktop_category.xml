@@ -32,11 +32,11 @@
 
         <TextView
             android:id="@+id/textItemDesktopCategory"
-            style="@style/Text.H5.Secondary.Roboto.Regular"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Chcę\npojechać"
+            android:textAppearance="@style/Text.H5.Secondary.Roboto.Regular"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

@@ -3,6 +3,7 @@
 
     <style name="Text" />
 
+    <!-- H1 -->
     <style name="Text.H1">
         <item name="android:textSize">@dimen/text_h1</item>
     </style>
@@ -17,8 +18,36 @@
         <item name="fontFamily">@font/roboto_medium</item>
     </style>
 
-    <style name="Text.H2" />
+    <style name="Text.H1.Primary.Roboto.Regular">
+        <item name="fontFamily">@font/roboto</item>
+    </style>
 
+    <style name="Text.H1.Primary.Roboto.Regular.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- H2 -->
+    <style name="Text.H2">
+        <item name="android:textSize">@dimen/text_h2</item>
+    </style>
+
+    <style name="Text.H2.Primary" />
+
+    <style name="Text.H2.Primary.Roboto" />
+
+    <style name="Text.H2.Primary.Roboto.Medium">
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="Text.H2.Primary.Roboto.Regular">
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="Text.H2.Primary.Roboto.Regular.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- H3 -->
     <style name="Text.H3">
         <item name="android:textSize">@dimen/text_h3</item>
     </style>
@@ -37,6 +66,7 @@
         <item name="android:fontFamily">@font/roboto_medium</item>
     </style>
 
+    <!-- H5 -->
     <style name="Text.H5">
         <item name="android:textSize">@dimen/text_h5</item>
     </style>
@@ -69,5 +99,28 @@
 
     <style name="Text.H5.Accent.Roboto.Medium">
         <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="Text.H5.Accent.Roboto.Regular">
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="Text.H5.Accent.Roboto.Regular.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- H6 -->
+    <style name="Text.H6">
+        <item name="android:textSize">@dimen/text_h5</item>
+    </style>
+
+    <style name="Text.H6.Primary">
+        <item name="android:textColor">@color/textColorPrimary</item>
+    </style>
+
+    <style name="Text.H6.Primary.Roboto" />
+
+    <style name="Text.H6.Primary.Roboto.Regular">
+        <item name="android:fontFamily">@font/roboto</item>
     </style>
 </resources>

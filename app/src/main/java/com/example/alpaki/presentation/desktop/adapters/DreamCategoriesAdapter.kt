@@ -32,9 +32,8 @@ class DreamCategoriesAdapter(
 
     override fun getItemCount(): Int = categories.size
 
-    override fun onBindViewHolder(holder: DreamCategoryViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: DreamCategoryViewHolder, position: Int) =
         holder.bind(categories[position])
-    }
 
     inner class DreamCategoryViewHolder(
         private val binding: ItemDesktopCategoryBinding
@@ -45,13 +44,15 @@ class DreamCategoriesAdapter(
 
         fun bind(item: DreamCategory) {
             val itemResources = matchResources(item)
-            binding.textItemDesktopCategory.text = itemResources.first
-            binding.imageItemDesktopCategory.setImageDrawable(itemResources.second)
-            val labelTextColor: Int =
-                if (item == QUICK_MODE) resources.getColor(R.color.burnt_sienna)
-                else resources.getColor(R.color.dimGray)
-            binding.textItemDesktopCategory.setTextColor(labelTextColor)
-            binding.root.setOnClickListener { onItemClick(item) }
+            with(binding) {
+                textItemDesktopCategory.text = itemResources.first
+                imageItemDesktopCategory.setImageDrawable(itemResources.second)
+                val labelTextColor: Int =
+                    if (item == QUICK_MODE) resources.getColor(R.color.burnt_sienna)
+                    else resources.getColor(R.color.dimGray)
+                textItemDesktopCategory.setTextColor(labelTextColor)
+                root.setOnClickListener { onItemClick(item) }
+            }
         }
 
         private fun matchResources(category: DreamCategory): Pair<String, Drawable> {
