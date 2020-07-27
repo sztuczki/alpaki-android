@@ -1,4 +1,4 @@
-package com.example.alpaki.presentation.adapters
+package com.example.alpaki.presentation.desktop.adapters
 
 import android.content.res.Resources
 import android.graphics.drawable.Drawable
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.alpaki.R
 import com.example.alpaki.databinding.ItemDesktopCategoryBinding
-import com.example.alpaki.presentation.adapters.DreamCategoriesAdapter.DreamCategoryViewHolder
+import com.example.alpaki.presentation.desktop.adapters.DreamCategoriesAdapter.DreamCategoryViewHolder
 import com.example.domain.models.DreamCategory
 import com.example.domain.models.DreamCategory.*
 

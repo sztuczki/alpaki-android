@@ -1,4 +1,4 @@
-package com.example.alpaki.presentation.fragments
+package com.example.alpaki.presentation.tasks
 
 import com.example.alpaki.R
 import com.example.alpaki.core.views.base.BaseFragment

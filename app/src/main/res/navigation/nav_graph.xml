@@ -5,25 +5,25 @@
     app:startDestination="@id/desktopFragment">
     <fragment
         android:id="@+id/desktopFragment"
-        android:name="com.example.alpaki.presentation.fragments.DesktopFragment"
+        android:name="com.example.alpaki.presentation.desktop.DesktopFragment"
         android:label="desktop_fragment"
         tools:layout="@layout/fragment_desktop" />
 
     <fragment
         android:id="@+id/dreamsFragment"
-        android:name="com.example.alpaki.presentation.fragments.DreamsFragment"
+        android:name="com.example.alpaki.presentation.dreams.DreamsFragment"
         android:label="dreams_fragment"
         tools:layout="@layout/fragment_dreams" />
 
     <fragment
         android:id="@+id/tasksFragment"
-        android:name="com.example.alpaki.presentation.fragments.TasksFragment"
+        android:name="com.example.alpaki.presentation.tasks.TasksFragment"
         android:label="tasks_fragment"
         tools:layout="@layout/fragment_tasks" />
 
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.alpaki.presentation.fragments.ProfileFragment"
+        android:name="com.example.alpaki.presentation.profile.ProfileFragment"
         android:label="profileFragment"
         tools:layout="@layout/fragment_profile" />
 
