@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        tools:background="@color/whiteSmoke"
+        tools:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageItemDesktopPerson"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_item_volunteer_placeholder_80dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textItemDesktopPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textAppearance="@style/Text.H5.Primary.Roboto.Regular"
+            app:layout_constraintTop_toBottomOf="@+id/imageItemDesktopPerson"
+            tools:text="Anna Nowak" />
+
+        <TextView
+            android:id="@+id/textItemDesktopPersonCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Text.H5.Secondary.Roboto.Regular"
+            app:layout_constraintTop_toBottomOf="@+id/textItemDesktopPersonName"
+            tools:text="Wrocław" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
