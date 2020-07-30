@@ -6,6 +6,6 @@ import com.bumptech.glide.Glide
 import com.example.alpaki.R
 
 @BindingAdapter("urlImage")
-fun ImageView.urlImage(url: String){
+fun ImageView.urlCircleImage(url: String){
     Glide.with(this).load(url).circleCrop().placeholder(R.drawable.ic_launcher_background).into(this)
 }

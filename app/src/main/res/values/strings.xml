@@ -34,6 +34,9 @@
     <string name="text_profile_active">Aktywny</string>
     <string name="text_profile_unactive">Nieaktywny</string>
     <string name="button_profile_logout">Wyloguj się</string>
+    <string name="active_dream">Aktywne marzenie</string>
+    <string name="done_dreams">Spełnione marzenia</string>
+    <string name="more_about_dreamer">WIĘCEJ O MARZYCIELU</string>
 
     <!--register first fragment-->
     <string name="title_register_register">Zarejestruj się</string>
@@ -46,7 +49,5 @@
     <string name="text_register_lack_of_activation_code">Nie masz kodu aktywacyjnego? Skontaktuj się ze swoim koordynatorem.</string>
     <string name="text_register_terms">Zakładając konto, akceptujesz Regulamin oraz Politykę Prywatności Fundacji Mam Marzenie.</string>
     <string name="button_register_register">Zarejestruj się</string>
-<!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

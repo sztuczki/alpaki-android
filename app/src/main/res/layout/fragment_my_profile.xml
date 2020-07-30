@@ -6,7 +6,7 @@
     <data>
 
         <variable
-            name="tmpFragment"
+            name="tmp"
             type="com.example.alpaki.presentation.profile.MyProfileFragment" />
     </data>
 
@@ -28,14 +28,13 @@
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/editMyProfileFAB"
+                style="@style/MiniFabStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:layout_margin="@dimen/margin_medium"
-                android:backgroundTint="@color/white"
-                android:src="@drawable/ic_edit_my_profile_button_background"
-                app:borderWidth="0dp"
-                app:fabSize="mini" />
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:src="@drawable/ic_edit_my_profile_button_background" />
 
             <FrameLayout
                 android:id="@+id/myProfileImageFrameLayout"
@@ -51,26 +50,23 @@
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/myProfileImage"
-                        urlImage="@{tmpFragment.testImageUrl}"
-                        android:layout_width="157dp"
-                        android:layout_height="157dp"
+                        urlImage="@{tmp.testImageUrl}"
+                        android:layout_width="@dimen/my_profile_image_size"
+                        android:layout_height="@dimen/my_profile_image_size"
                         android:layout_gravity="center"
-                        android:background="@drawable/ic_launcher_foreground"
                         tools:src="@mipmap/ic_launcher" />
                 </FrameLayout>
 
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/editMyProfileImageFAB"
+                    style="@style/MiniFabStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|end"
-                    android:backgroundTint="@color/white"
                     android:elevation="0dp"
                     android:src="@drawable/ic_photo_camera"
-                    app:borderWidth="0dp"
-                    app:elevation="0dp"
-                    app:fabSize="mini" />
+                    app:elevation="0dp" />
             </FrameLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -90,7 +86,7 @@
                     android:id="@+id/activeMyProfileStatusText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@{tmpFragment.testActive ? @drawable/ic_status_active : @drawable/ic_status_unactive}"
+                    android:src="@{tmp.testActive ? @drawable/ic_status_active : @drawable/ic_status_unactive}"
                     tools:src="@drawable/ic_status_active" />
 
                 <TextView
@@ -98,7 +94,7 @@
                     style="@style/TextView.ActiveStatus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{tmpFragment.testActive ? @string/text_profile_active : @string/text_profile_unactive}"
+                    android:text="@{tmp.testActive ? @string/text_profile_active : @string/text_profile_unactive}"
                     tools:text="Aktywny" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
@@ -129,7 +125,7 @@
                 tools:text="Warszawa" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/myProfileUnknow"
+                android:id="@+id/myProfileCoordinator"
                 style="@style/TextView.MyProfileInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -137,12 +133,9 @@
                 tools:text="Beata Sadowska" />
 
             <View
+                style="@style/DecorationLine"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/decoration_line_size"
-                android:layout_marginTop="@dimen/margin_xlarge"
-                android:layout_marginStart="@dimen/margin_medium"
-                android:layout_marginEnd="@dimen/margin_medium"
-                android:background="@color/dimGray" />
+                android:layout_height="@dimen/decoration_line_size" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/buttonLogout"
@@ -151,9 +144,135 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_medium"
                 android:layout_marginTop="@dimen/margin_xlarge"
-                android:layout_marginBottom="@dimen/margin_small"
                 android:layout_marginEnd="@dimen/margin_medium"
+                android:layout_marginBottom="@dimen/margin_small"
                 android:text="@string/button_profile_logout" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/activeDreamText"
+                    style="@style/TextView.ActiveDream"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/active_dream" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/addActiveDreamFAB"
+                    style="@style/MiniFabStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_marginEnd="@dimen/margin_medium"
+                    android:layout_marginBottom="@dimen/margin_medium"
+                    android:gravity="end"
+                    android:src="@drawable/ic_add" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:fontFamily="@font/roboto "
+                android:text="CHCĘ DOSTAĆ (NAZWA KATEGORI)"
+                android:textColor="@color/dimGray"
+                android:textSize="@dimen/text_h6"
+                tools:text="CHCĘ DOSTAĆ (NAZWA KATEGORI)" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_xsmall"
+                android:text="Tęczowy latop (nazwa marzenia)"
+                android:textColor="@color/eclipse"
+                android:textSize="@dimen/text_h2"
+                tools:text="Tęczowy latop (nazwa marzenia)" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small"
+                android:background="@drawable/background_white_12dp_corners">
+
+                <TextView
+                    android:id="@+id/doneDreamNameAndAgeText"
+                    style="@style/TextView.DreamerCardTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Małgosia / 8 lat"
+                    tools:text="Małgosia / 8 lat" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/doneDreamCity"
+                    style="@style/TextView.DreamerCardSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/doneDreamNameAndAgeText"
+                    android:text="Warszawa"
+                    tools:text="Warszawa" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/doneDreamCity"
+                    android:layout_margin="@dimen/margin_small"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/more_about_dreamer"
+                    android:textColor="@color/malachite"
+                    android:textSize="@dimen/text_h6"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/doneDreamDreamerImage"
+                    urlImage="@{tmp.testImageUrl}"
+                    android:layout_width="@dimen/dreamer_image_size"
+                    android:layout_height="@dimen/dreamer_image_size"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="@dimen/margin_small"
+                    tools:src="@mipmap/ic_launcher" />
+            </RelativeLayout>
+
+            <View
+                style="@style/DecorationLine"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/decoration_line_size"
+                android:background="@color/white" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/doneDreamsText"
+                    style="@style/TextView.DoneDreams"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/done_dreams" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/addDoneDreamsFAB"
+                    style="@style/MiniFabStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_marginEnd="@dimen/margin_medium"
+                    android:layout_marginBottom="@dimen/margin_medium"
+                    android:gravity="end"
+                    android:src="@drawable/ic_add" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="400dp" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

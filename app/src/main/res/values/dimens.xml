@@ -32,4 +32,6 @@
     <dimen name="guideline_vertical_size">14dp</dimen>
 
     <dimen name="decoration_line_size">1dp</dimen>
+    <dimen name="my_profile_image_size">160dp</dimen>
+    <dimen name="dreamer_image_size">56dp</dimen>
 </resources>

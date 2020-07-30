@@ -73,4 +73,50 @@
         <item name="fontFamily">@font/roboto</item>
         <item name="android:gravity">center</item>
     </style>
+
+    <style name="DecorationLine">
+        <item name="android:layout_marginStart">@dimen/margin_medium</item>
+        <item name="android:layout_marginTop">@dimen/margin_xlarge</item>
+        <item name="android:layout_marginEnd">@dimen/margin_medium</item>
+        <item name="android:background">@color/dimGray</item>
+    </style>
+
+    <style name="MiniFabStyle" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="borderWidth">0dp</item>
+        <item name="fabSize">mini</item>
+        <item name="android:backgroundTint">@color/white</item>
+    </style>
+
+    <style name="TextView.DoneDreams" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_marginStart">@dimen/margin_small</item>
+        <item name="android:layout_marginTop">@dimen/margin_small</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textColor">@color/eclipse</item>
+        <item name="android:textSize">@dimen/text_h3</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="TextView.ActiveDream" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_marginStart">@dimen/margin_small</item>
+        <item name="android:layout_marginTop">@dimen/margin_small</item>
+        <item name="android:textColor">@color/eclipse</item>
+        <item name="android:textSize">@dimen/text_h3</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="TextView.DreamerCardTitle" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_marginStart">@dimen/margin_small</item>
+        <item name="android:layout_marginTop">@dimen/margin_small</item>
+        <item name="android:textColor">@color/eclipse</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textSize">@dimen/text_h5</item>
+    </style>
+
+    <style name="TextView.DreamerCardSubtitle" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_marginStart">@dimen/margin_small</item>
+        <item name="android:textSize">@dimen/text_h5</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textColor">@color/dimGray</item>
+    </style>
 </resources>

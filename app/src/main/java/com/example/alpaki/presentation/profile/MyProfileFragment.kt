@@ -23,7 +23,7 @@ class MyProfileFragment : BaseFragment<FragmentMyProfileBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.tmpFragment = this
+        binding.tmp = this
     }
 
 }
