@@ -48,9 +48,28 @@
 
     <style name="TextView.FullName" parent="TextAppearance.AppCompat">
         <item name="android:paddingStart">@dimen/padding_title_bar</item>
-        <item name="android:textColor">#3A3A3A</item>
+        <item name="android:textColor">@color/eclipse</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/text_h1</item>
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TextView.ActiveStatus" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/veryLightGrey</item>
+        <item name="android:layout_marginStart">@dimen/margin_xsmall</item>
+        <item name="android:layout_marginEnd">@dimen/margin_xsmall</item>
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
+    <style name="TextView.MyProfileInfo" parent="TextAppearance.AppCompat">
+        <item name="android:layout_marginStart">@dimen/margin_medium</item>
+        <item name="android:layout_marginEnd">@dimen/margin_medium</item>
+        <item name="android:textColor">@color/dimGray</item>
+        <item name="android:textSize">@dimen/text_h4</item>
+        <item name="android:layout_marginTop">@dimen/margin_xsmall</item>
         <item name="fontFamily">@font/roboto</item>
         <item name="android:gravity">center</item>
     </style>

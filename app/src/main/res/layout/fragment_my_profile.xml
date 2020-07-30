@@ -6,39 +6,42 @@
     <data>
 
         <variable
-            name="test"
-            type="String" />
+            name="tmpFragment"
+            type="com.example.alpaki.presentation.profile.MyProfileFragment" />
     </data>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fitsSystemWindows="true"
+            android:orientation="vertical"
             tools:background="@color/white">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/dimGray" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/editMyProfileFAB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="end"
                 android:layout_margin="@dimen/margin_medium"
                 android:backgroundTint="@color/white"
                 android:src="@drawable/ic_edit_my_profile_button_background"
                 app:borderWidth="0dp"
-                app:fabSize="mini"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:fabSize="mini" />
 
             <FrameLayout
                 android:id="@+id/myProfileImageFrameLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/editMyProfileFAB">
+                android:layout_gravity="center_horizontal">
 
                 <FrameLayout
                     android:layout_width="match_parent"
@@ -48,7 +51,7 @@
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/myProfileImage"
-                        urlImage="@{test}"
+                        urlImage="@{tmpFragment.testImageUrl}"
                         android:layout_width="157dp"
                         android:layout_height="157dp"
                         android:layout_gravity="center"
@@ -71,43 +74,87 @@
             </FrameLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-
-                android:text="Jan Kowalski"
                 style="@style/TextView.FullName"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
-                app:layout_constraintStart_toStartOf="@id/guidelineStart"
-                app:layout_constraintTop_toBottomOf="@id/myProfileImageFrameLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Jan Kowalski"
                 tools:text="Jan Kowalski" />
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guidelineStart"
-                android:layout_width="wrap_content"
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_begin="@dimen/guideline_vertical_size" />
+                android:gravity="center">
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guidelineEnd"
-                android:layout_width="wrap_content"
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/activeMyProfileStatusText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@{tmpFragment.testActive ? @drawable/ic_status_active : @drawable/ic_status_unactive}"
+                    tools:src="@drawable/ic_status_active" />
+
+                <TextView
+                    android:id="@+id/activeMyProfileStatusIcon"
+                    style="@style/TextView.ActiveStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{tmpFragment.testActive ? @string/text_profile_active : @string/text_profile_unactive}"
+                    tools:text="Aktywny" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/myProfileEmail"
+                style="@style/TextView.MyProfileInfo"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_end="@dimen/guideline_vertical_size" />
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:text="jankowlaski@gmail.com"
+                tools:text="jankowalski@gmail.com" />
 
-            <!--            <androidx.appcompat.widget.AppCompatButton-->
-            <!--                android:id="@+id/buttonLogIn"-->
-            <!--                style="@style/Button.Text.Color.Green"-->
-            <!--                android:layout_width="0dp"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_marginTop="@dimen/margin_medium"-->
-            <!--                android:scaleType="center"-->
-            <!--                android:text="@string/button_profile_login"-->
-            <!--                app:layout_constraintBottom_toBottomOf="parent"-->
-            <!--                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"-->
-            <!--                app:layout_constraintStart_toStartOf="@+id/guidelineStart" />-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/myProfileNumber"
+                style="@style/TextView.MyProfileInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+48 2137420"
+                tools:text="+48 213 742 000" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/myProfileCity"
+                style="@style/TextView.MyProfileInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Warszawa"
+                tools:text="Warszawa" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/myProfileUnknow"
+                style="@style/TextView.MyProfileInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Beata Sadowska"
+                tools:text="Beata Sadowska" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/decoration_line_size"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:background="@color/dimGray" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonLogout"
+                style="@style/Button.Text.Color.Green"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:text="@string/button_profile_logout" />
+
+        </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </layout>

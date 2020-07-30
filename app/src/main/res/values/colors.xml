@@ -9,6 +9,8 @@
     <color name="pigmentGreen">#099F3C</color>
     <color name="malachite">#0CD44F</color>
 
+    <color name="veryLightGrey">#BDBDBD</color>
+    
     <color name="dimGray">#666666</color>
     <color name="eclipse">#3A3A3A</color>
     <color name="white">#FFFFFF</color>
