@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/desktopFragment">
+    app:startDestination="@id/myProfileFragment">
     <fragment
         android:id="@+id/desktopFragment"
         android:name="com.example.alpaki.presentation.desktop.DesktopFragment"
@@ -32,4 +32,8 @@
         android:name="com.example.alpaki.presentation.fragments.RegisterFragment"
         android:label="RegisterFragment"
         tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/myProfileFragment"
+        android:name="com.example.alpaki.presentation.profile.MyProfileFragment"
+        android:label="MyProfileFragment" />
 </navigation>

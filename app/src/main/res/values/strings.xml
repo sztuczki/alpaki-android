@@ -41,5 +41,7 @@
     <string name="text_register_lack_of_activation_code">Nie masz kodu aktywacyjnego? Skontaktuj się ze swoim koordynatorem.</string>
     <string name="text_register_terms">Zakładając konto, akceptujesz Regulamin oraz Politykę Prywatności Fundacji Mam Marzenie.</string>
     <string name="button_register_register">Zarejestruj się</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
