@@ -21,11 +21,6 @@
             android:orientation="vertical"
             tools:background="@color/white">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:background="@color/dimGray" />
-
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/editMyProfileFAB"
                 style="@style/MiniFabStyle"
@@ -173,70 +168,6 @@
                     android:src="@drawable/ic_add" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_small"
-                android:fontFamily="@font/roboto "
-                android:text="CHCĘ DOSTAĆ (NAZWA KATEGORI)"
-                android:textColor="@color/dimGray"
-                android:textSize="@dimen/text_h6"
-                tools:text="CHCĘ DOSTAĆ (NAZWA KATEGORI)" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_small"
-                android:layout_marginTop="@dimen/margin_xsmall"
-                android:text="Tęczowy latop (nazwa marzenia)"
-                android:textColor="@color/eclipse"
-                android:textSize="@dimen/text_h2"
-                tools:text="Tęczowy latop (nazwa marzenia)" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_small"
-                android:background="@drawable/background_white_12dp_corners">
-
-                <TextView
-                    android:id="@+id/doneDreamNameAndAgeText"
-                    style="@style/TextView.DreamerCardTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Małgosia / 8 lat"
-                    tools:text="Małgosia / 8 lat" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/doneDreamCity"
-                    style="@style/TextView.DreamerCardSubtitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/doneDreamNameAndAgeText"
-                    android:text="Warszawa"
-                    tools:text="Warszawa" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/doneDreamCity"
-                    android:layout_margin="@dimen/margin_small"
-                    android:fontFamily="@font/roboto"
-                    android:text="@string/more_about_dreamer"
-                    android:textColor="@color/malachite"
-                    android:textSize="@dimen/text_h6"
-                    android:textStyle="bold" />
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/doneDreamDreamerImage"
-                    urlImage="@{tmp.testImageUrl}"
-                    android:layout_width="@dimen/dreamer_image_size"
-                    android:layout_height="@dimen/dreamer_image_size"
-                    android:layout_alignParentEnd="true"
-                    android:layout_margin="@dimen/margin_small"
-                    tools:src="@mipmap/ic_launcher" />
-            </RelativeLayout>
 
             <View
                 style="@style/DecorationLine"
