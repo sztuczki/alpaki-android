@@ -30,6 +30,14 @@
     <string name="button_profile_register">Zarejestruj się</string>
     <string name="text_forgotten_password">Nie pamiętasz hasła?</string>
 
+    <!--my profile fragment-->
+    <string name="text_profile_active">Aktywny</string>
+    <string name="text_profile_unactive">Nieaktywny</string>
+    <string name="button_profile_logout">Wyloguj się</string>
+    <string name="active_dream">Aktywne marzenie</string>
+    <string name="done_dreams">Spełnione marzenia</string>
+    <string name="more_about_dreamer">WIĘCEJ O MARZYCIELU</string>
+
     <!--register first fragment-->
     <string name="title_register_register">Zarejestruj się</string>
     <string name="hint_register_name">Imię</string>

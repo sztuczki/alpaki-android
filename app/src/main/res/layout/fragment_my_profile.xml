@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="tmp"
+            type="com.example.alpaki.presentation.profile.MyProfileFragment" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:orientation="vertical"
+            tools:background="@color/white">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/editMyProfileFAB"
+                style="@style/MiniFabStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:src="@drawable/ic_edit_my_profile_button_background" />
+
+            <FrameLayout
+                android:id="@+id/myProfileImageFrameLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/my_profile_image_border"
+                    android:padding="@dimen/padding_xxsmall">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/myProfileImage"
+                        urlImage="@{tmp.testImageUrl}"
+                        android:layout_width="@dimen/my_profile_image_size"
+                        android:layout_height="@dimen/my_profile_image_size"
+                        android:layout_gravity="center"
+                        tools:src="@mipmap/ic_launcher" />
+                </FrameLayout>
+
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/editMyProfileImageFAB"
+                    style="@style/MiniFabStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:elevation="0dp"
+                    android:src="@drawable/ic_photo_camera"
+                    app:elevation="0dp" />
+            </FrameLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textAppearance="@style/Text.H1.Primary.Roboto.Regular.Bold"
+                android:textColor="@color/eclipse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Jan Kowalski"
+                tools:text="Jan Kowalski"/>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/activeMyProfileStatusText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@{tmp.testActive ? @drawable/ic_status_active : @drawable/ic_status_unactive}"
+                    tools:src="@drawable/ic_status_active" />
+
+                <TextView
+                    android:id="@+id/activeMyProfileStatusIcon"
+                    style="@style/TextView.ActiveStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{tmp.testActive ? @string/text_profile_active : @string/text_profile_unactive}"
+                    tools:text="Aktywny" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/myProfileEmail"
+                style="@style/TextView.MyProfileInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:text="jankowlaski@gmail.com"
+                tools:text="jankowalski@gmail.com" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/myProfileNumber"
+                style="@style/TextView.MyProfileInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+48 2137420"
+                tools:text="+48 213 742 000" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/myProfileCity"
+                style="@style/TextView.MyProfileInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Warszawa"
+                tools:text="Warszawa" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/myProfileCoordinator"
+                style="@style/TextView.MyProfileInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Beata Sadowska"
+                tools:text="Beata Sadowska" />
+
+            <View
+                style="@style/DecorationLine"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/decoration_line_size" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonLogout"
+                style="@style/Button.Text.Color.Green"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:text="@string/button_profile_logout" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/activeDreamText"
+                    style="@style/TextView.DreamTypeListTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/active_dream" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/addActiveDreamFAB"
+                    style="@style/MiniFabStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_marginEnd="@dimen/margin_medium"
+                    android:layout_marginBottom="@dimen/margin_medium"
+                    android:gravity="end"
+                    android:src="@drawable/ic_add" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <View
+                style="@style/DecorationLine"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/decoration_line_size"
+                android:background="@color/white" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/doneDreamsText"
+                    style="@style/TextView.DreamTypeListTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/done_dreams" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/addDoneDreamsFAB"
+                    style="@style/MiniFabStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_marginEnd="@dimen/margin_medium"
+                    android:layout_marginBottom="@dimen/margin_medium"
+                    android:gravity="end"
+                    android:src="@drawable/ic_add" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="400dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
