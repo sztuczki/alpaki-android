@@ -46,17 +46,8 @@
         <item name="android:paddingEnd">@dimen/padding_title_bar</item>
     </style>
 
-    <style name="TextView.FullName" parent="TextAppearance.AppCompat">
-        <item name="android:paddingStart">@dimen/padding_title_bar</item>
-        <item name="android:textColor">@color/eclipse</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textSize">@dimen/text_h1</item>
-        <item name="fontFamily">@font/roboto</item>
-        <item name="android:gravity">center</item>
-    </style>
-
     <style name="TextView.ActiveStatus" parent="TextAppearance.AppCompat">
-        <item name="android:textColor">@color/veryLightGrey</item>
+        <item name="android:textColor">@color/silver</item>
         <item name="android:layout_marginStart">@dimen/margin_xsmall</item>
         <item name="android:layout_marginEnd">@dimen/margin_xsmall</item>
         <item name="fontFamily">@font/roboto</item>
@@ -87,16 +78,7 @@
         <item name="android:backgroundTint">@color/white</item>
     </style>
 
-    <style name="TextView.DoneDreams" parent="Widget.AppCompat.TextView">
-        <item name="android:layout_marginStart">@dimen/margin_small</item>
-        <item name="android:layout_marginTop">@dimen/margin_small</item>
-        <item name="android:fontFamily">@font/roboto</item>
-        <item name="android:textColor">@color/eclipse</item>
-        <item name="android:textSize">@dimen/text_h3</item>
-        <item name="android:layout_weight">1</item>
-    </style>
-
-    <style name="TextView.ActiveDream" parent="Widget.AppCompat.TextView">
+    <style name="TextView.DreamTypeListTitle" parent="Widget.AppCompat.TextView">
         <item name="android:layout_marginStart">@dimen/margin_small</item>
         <item name="android:layout_marginTop">@dimen/margin_small</item>
         <item name="android:textColor">@color/eclipse</item>

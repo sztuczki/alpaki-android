@@ -65,12 +65,13 @@
             </FrameLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
-                style="@style/TextView.FullName"
+                android:textAppearance="@style/Text.H1.Primary.Roboto.Regular.Bold"
+                android:textColor="@color/eclipse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="Jan Kowalski"
-                tools:text="Jan Kowalski" />
+                tools:text="Jan Kowalski"/>
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
@@ -151,7 +152,7 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/activeDreamText"
-                    style="@style/TextView.ActiveDream"
+                    style="@style/TextView.DreamTypeListTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/active_dream" />
@@ -183,7 +184,7 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/doneDreamsText"
-                    style="@style/TextView.DoneDreams"
+                    style="@style/TextView.DreamTypeListTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/done_dreams" />
