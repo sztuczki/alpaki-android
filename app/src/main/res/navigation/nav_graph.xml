@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.alpaki.presentation.fragments.ProfileFragment"
+        android:name="com.example.alpaki.presentation.login.ProfileFragment"
         android:label="profileFragment"
         tools:layout="@layout/fragment_profile" />
 

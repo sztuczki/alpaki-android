@@ -1,4 +1,4 @@
-package com.example.alpaki.presentation.fragments
+package com.example.alpaki.presentation.login
 
 import android.os.Bundle
 import android.view.View
