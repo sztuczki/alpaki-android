@@ -5,13 +5,14 @@ import com.example.data.dataSource.remote.TokenRemoteDataSource
 import com.example.data.repository.TokenRepository
 
 class TokenRepositoryImpl(
-    val tokenLocalDataSource: TokenLocalDataSource,
-    val tokenRemoteDataSource: TokenRemoteDataSource
-): TokenRepository {
+    private val tokenLocalDataSource: TokenLocalDataSource,
+    private val tokenRemoteDataSource: TokenRemoteDataSource
+) : TokenRepository {
 
-    override fun login(email: String, password: String) {
-        tokenRemoteDataSource.getToken(email, password).
+    override suspend fun logIn(email: String, password: String) {
+        tokenRemoteDataSource.getToken(email, password).apply {
+            tokenLocalDataSource.saveToken(this)
+        }
     }
-
 
 }

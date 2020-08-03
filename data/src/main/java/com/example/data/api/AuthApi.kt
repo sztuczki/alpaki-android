@@ -1,7 +1,8 @@
 package com.example.data.api
 
 interface AuthApi {
-    suspend fun getToken(email: String, password: String)
+    // Here will be endpoint to authentication
+    suspend fun getToken(email: String, password: String): String
 
     suspend fun resetPassword(email: String)
 }

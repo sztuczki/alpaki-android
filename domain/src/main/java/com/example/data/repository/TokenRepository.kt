@@ -1,5 +1,5 @@
 package com.example.data.repository
 
 interface TokenRepository {
-    fun login(email: String, password: String)
+    suspend fun logIn(email: String, password: String)
 }

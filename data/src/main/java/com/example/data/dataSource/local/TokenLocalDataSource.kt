@@ -6,7 +6,5 @@ class TokenLocalDataSource(
     fun saveToken(token: String) =
         localTokenSettings.saveToken(token)
 
-    fun retrieveToken() = localTokenSettings.retrieveToken()
-
     fun deleteToken() = localTokenSettings.deleteTokens()
 }

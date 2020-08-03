@@ -5,11 +5,28 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import com.example.data.repository.TokenRepository
+import com.example.data.usecases.LoginUseCase
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import javax.inject.Inject
 
 class ProfileViewModel @ViewModelInject constructor(
-    private val tokenRepository: TokenRepository,
     @Assisted private val savedStateHandle: SavedStateHandle
 ) : ViewModel(), LifecycleObserver {
+
+    @Inject
+    lateinit var loginUseCase: LoginUseCase
+
+    fun logIn(email: String, password: String) =
+        loginUseCase(
+            CoroutineScope(Dispatchers.IO),
+            LoginUseCase.Params(email, password),
+            { result ->
+                // handle success
+            },
+            { error ->
+                // handle error
+            }
+        )
 
 }
