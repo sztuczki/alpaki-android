@@ -3,8 +3,9 @@ package com.example.data
 import com.example.data.dataSource.local.TokenLocalDataSource
 import com.example.data.dataSource.remote.TokenRemoteDataSource
 import com.example.data.repository.TokenRepository
+import javax.inject.Inject
 
-class TokenRepositoryImpl(
+class TokenRepositoryImpl @Inject constructor(
     private val tokenLocalDataSource: TokenLocalDataSource,
     private val tokenRemoteDataSource: TokenRemoteDataSource
 ) : TokenRepository {
