@@ -6,14 +6,16 @@ import com.example.data.repository.TokenRepository
 import javax.inject.Inject
 
 class TokenRepositoryImpl @Inject constructor(
-    private val tokenLocalDataSource: TokenLocalDataSource,
-    private val tokenRemoteDataSource: TokenRemoteDataSource
+//    private val tokenLocalDataSource: TokenLocalDataSource,
+//    private val tokenRemoteDataSource: TokenRemoteDataSource
 ) : TokenRepository {
 
-    override suspend fun logIn(email: String, password: String) {
-        tokenRemoteDataSource.getToken(email, password).apply {
-            tokenLocalDataSource.saveToken(this)
-        }
-    }
+    override suspend fun logIn(email: String, password: String) = Unit
+
+    //    override suspend fun logIn(email: String, password: String) {
+//        tokenRemoteDataSource.getToken(email, password).apply {
+//            tokenLocalDataSource.saveToken(this)
+//        }
+//    }
 
 }

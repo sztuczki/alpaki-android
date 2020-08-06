@@ -1,6 +1,5 @@
 package com.example.alpaki.di.main
 
-import com.example.data.TokenRepositoryImpl
 import com.example.data.repository.TokenRepository
 import com.example.data.usecases.LoginUseCase
 import dagger.Module
@@ -14,12 +13,7 @@ import javax.inject.Singleton
 object ExampleActivityLevelModule {
 
     @Provides
-    @Singleton
-    fun provideTokenRepository(tokenRepository: TokenRepositoryImpl): TokenRepository =
-        tokenRepository
-
-    /*@Provides
-    @Singleton
-    fun provideLoginUseCase(tokenRepository: TokenRepository): LoginUseCase =
-        LoginUseCase(tokenRepository)*/
+//    TODO: this cannot be @Singleton as this is Activity-level module
+//    Singletons can only be declared in Application-level module: @InstallIn(ApplicationComponent::class)
+    fun provideLoginUseCase(tokenRepository: TokenRepository): LoginUseCase = LoginUseCase(tokenRepository)
 }
