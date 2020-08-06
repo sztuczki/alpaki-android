@@ -8,14 +8,11 @@ import androidx.lifecycle.ViewModel
 import com.example.data.usecases.LoginUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import javax.inject.Inject
 
 class ProfileViewModel @ViewModelInject constructor(
-    @Assisted private val savedStateHandle: SavedStateHandle
+    @Assisted private val savedStateHandle: SavedStateHandle,
+    private val loginUseCase: LoginUseCase
 ) : ViewModel(), LifecycleObserver {
-
-    @Inject
-    lateinit var loginUseCase: LoginUseCase
 
     fun logIn(email: String, password: String) =
         loginUseCase(

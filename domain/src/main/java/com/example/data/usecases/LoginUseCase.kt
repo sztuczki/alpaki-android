@@ -4,11 +4,8 @@ import com.example.data.repository.TokenRepository
 import com.example.data.usecases.base.UseCase
 import javax.inject.Inject
 
-class LoginUseCase @Inject constructor() :
+class LoginUseCase @Inject constructor(private val tokenRepository: TokenRepository) :
     UseCase<LoginUseCase.Params, Unit>() {
-
-    @Inject
-    lateinit var tokenRepository: TokenRepository
 
     override suspend fun run(params: Params) =
         tokenRepository.logIn(params.email, params.password)
