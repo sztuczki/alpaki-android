@@ -1,10 +1,11 @@
 package com.example.data.dataSource.local
 
-class TokenLocalDataSource(
-    private val localTokenSettings: LocalTokenSettings
-) {
-    fun saveToken(token: String) =
-        localTokenSettings.saveToken(token)
+import javax.inject.Inject
 
-    fun deleteToken() = localTokenSettings.deleteTokens()
+//Add Dao file after connecting to the backend
+class TokenLocalDataSource @Inject constructor() {
+    fun saveToken(token: String) =
+        Unit
+
+    fun deleteToken() = Unit
 }

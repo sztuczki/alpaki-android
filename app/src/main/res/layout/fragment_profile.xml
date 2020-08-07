@@ -3,11 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.alpaki.presentation.login.ProfileViewModel" />
+
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:background="@color/white"
         android:fitsSystemWindows="true"
+        tools:background="@color/white"
         tools:context=".presentation.login.ProfileFragment">
 
         <androidx.constraintlayout.widget.Guideline
@@ -52,7 +60,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_profile_email"
-                android:inputType="text" />
+                android:inputType="text"
+                android:text="@={viewModel.email}" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -72,7 +81,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_profile_password"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                app:setLiveData="@{viewModel.password}" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.appcompat.widget.AppCompatButton

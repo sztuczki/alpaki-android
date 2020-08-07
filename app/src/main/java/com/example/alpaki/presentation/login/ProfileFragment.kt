@@ -1,6 +1,7 @@
 package com.example.alpaki.presentation.login
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -25,7 +26,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
         }
 
         buttonLogIn.setOnClickListener {
-            profileViewModel.logIn(editTextEmail.text.toString(), editTextPassword.text.toString())
+            profileViewModel.logIn()
         }
     }
 

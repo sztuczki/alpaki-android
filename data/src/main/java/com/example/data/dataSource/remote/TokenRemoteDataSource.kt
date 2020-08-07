@@ -1,13 +1,16 @@
 package com.example.data.dataSource.remote
 
-import com.example.data.api.AuthApi
+import javax.inject.Inject
 
-class TokenRemoteDataSource(
-    private val api: AuthApi
+// Uncomment after connecting to the backend
+
+class TokenRemoteDataSource @Inject constructor(
+    // private val api: AuthApi
 ) {
-    suspend fun getToken(email: String, password: String): String =
+
+    /*suspend fun getToken(email: String, password: String): String =
         api.getToken(email, password)
 
     suspend fun resetPassword(email: String) =
-        api.resetPassword(email)
+        api.resetPassword(email)*/
 }
