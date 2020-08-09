@@ -11,7 +11,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:background="@color/white"
-            tools:context=".presentation.fragments.ProfileFragment">
+            tools:context=".presentation.login.ProfileFragment">
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guidelineStart"
@@ -148,10 +148,10 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/textLackOfActivationCode"
-                android:textAppearance="@style/Text.H6.Primary.Roboto.Regular"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/text_register_lack_of_activation_code"
+                android:textAppearance="@style/Text.H6.Primary.Roboto.Regular"
                 android:textColor="@color/dimGray"
                 app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
                 app:layout_constraintStart_toStartOf="@+id/guidelineStart"
@@ -169,11 +169,11 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/textTerms"
-                android:textAppearance="@style/Text.H6.Primary.Roboto.Regular"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_medium"
                 android:text="@string/text_register_terms"
+                android:textAppearance="@style/Text.H6.Primary.Roboto.Regular"
                 android:textColor="@color/dimGray"
                 app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
                 app:layout_constraintStart_toStartOf="@+id/guidelineStart"
@@ -181,6 +181,7 @@
 
 
             //TODO [Adam] add proper imeOption on last textInputField
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/buttonNext"
                 style="@style/Button.Text.Color.Green"

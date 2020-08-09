@@ -30,14 +30,16 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         super.onCreate(savedInstanceState)
         navigationHandler.init(this)
 
-        exampleUseCase(lifecycleScope, None, { result ->
+        exampleUseCase(lifecycleScope,
+            None, { result ->
             handleResult(result)
         }, { error ->
             handleError(error)
         })
 
 //        alternatively
-        exampleUseCase(lifecycleScope, None, ::handleResult, ::handleError)
+        exampleUseCase(lifecycleScope,
+            None, ::handleResult, ::handleError)
     }
 
     private fun handleResult(result: String) = Unit

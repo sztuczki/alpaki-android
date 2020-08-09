@@ -8,14 +8,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.alpaki.R
 import com.example.alpaki.databinding.ItemDesktopCategoryBinding
 import com.example.alpaki.presentation.desktop.adapters.DreamCategoriesAdapter.DreamCategoryViewHolder
-import com.example.domain.models.DreamCategory
-import com.example.domain.models.DreamCategory.*
+import com.example.domain.models.Category
+import com.example.domain.models.Category.*
 
 class DreamCategoriesAdapter(
-    private val onItemClick: (DreamCategory) -> Unit
+    private val onItemClick: (Category) -> Unit
 ) : RecyclerView.Adapter<DreamCategoryViewHolder>() {
 
-    private val categories: List<DreamCategory> = listOf(
+    private val categories: List<Category> = listOf(
         VISIT,
         GIFT,
         MEET,
@@ -42,7 +42,7 @@ class DreamCategoriesAdapter(
         private val resources: Resources
             get() = binding.root.context.resources
 
-        fun bind(item: DreamCategory) {
+        fun bind(item: Category) {
             val itemResources = matchResources(item)
             with(binding) {
                 textItemDesktopCategory.text = itemResources.first
@@ -55,7 +55,7 @@ class DreamCategoriesAdapter(
             }
         }
 
-        private fun matchResources(category: DreamCategory): Pair<String, Drawable> {
+        private fun matchResources(category: Category): Pair<String, Drawable> {
             val label: String
             val icon: Drawable
             when (category) {
