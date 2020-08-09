@@ -3,22 +3,22 @@ package com.example.alpaki.presentation.login
 import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
-import com.example.domain.usecases.LoginUseCase
+import com.example.domain.usecases.Login
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 
 class ProfileViewModel @ViewModelInject constructor(
     @Assisted private val savedStateHandle: SavedStateHandle,
-    private val loginUseCase: LoginUseCase
+    private val login: Login
 ) : ViewModel(), LifecycleObserver {
 
     val email = MutableLiveData<String>()
     val password = MutableLiveData<String>()
 
     fun logIn() {
-        loginUseCase(
+        login(
             CoroutineScope(Dispatchers.IO),
-            LoginUseCase.Params(email.value.toString(), password.value.toString()),
+            Login.Params(email.value.toString(), password.value.toString()),
             { result ->
                 // Add logic after connecting to backend
             },
