@@ -1,4 +1,4 @@
-package com.example.domain.usecases.base
+package com.example.data.usecases.base
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job

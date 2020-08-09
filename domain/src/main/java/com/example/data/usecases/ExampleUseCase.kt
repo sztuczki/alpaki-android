@@ -1,7 +1,7 @@
-package com.example.domain.usecases
+package com.example.data.usecases
 
-import com.example.domain.usecases.base.None
-import com.example.domain.usecases.base.UseCase
+import com.example.data.usecases.base.None
+import com.example.data.usecases.base.UseCase
 import javax.inject.Inject
 
 class ExampleUseCase @Inject constructor() : UseCase<None, String>() {
