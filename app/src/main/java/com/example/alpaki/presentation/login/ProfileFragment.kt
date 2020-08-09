@@ -1,13 +1,13 @@
 package com.example.alpaki.presentation.login
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.alpaki.R
 import com.example.alpaki.core.views.base.BaseFragment
 import com.example.alpaki.databinding.FragmentProfileBinding
+import com.example.alpaki.presentation.util.isEmailValid
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_profile.*
 
@@ -20,14 +20,34 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        binding.viewModel = profileViewModel
         buttonRegister.setOnClickListener {
             openRegisterProcess()
         }
-
         buttonLogIn.setOnClickListener {
-            profileViewModel.logIn()
+            clearErrors()
+            if (isEmailPasswordCorrect()) profileViewModel.logIn()
         }
+    }
+
+    private fun isEmailPasswordCorrect(): Boolean {
+        with(profileViewModel) {
+             when {
+                email.value.isNullOrEmpty() -> layoutTextEmail.error =
+                    getString(R.string.text_error_missing_field)
+                password.value.isNullOrEmpty() -> layoutTextPassword.error =
+                    getString(R.string.text_error_missing_field)
+                email.value.isEmailValid().not() -> layoutTextEmail.error =
+                    getString(R.string.text_error_wrong_email)
+                else -> return true
+            }
+            return false
+        }
+    }
+
+    private fun clearErrors() {
+        layoutTextEmail.isErrorEnabled = false
+        layoutTextPassword.isErrorEnabled = false
     }
 
     private fun openRegisterProcess() = findNavController().navigate(R.id.registerFragment)
