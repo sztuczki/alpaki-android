@@ -2,7 +2,7 @@ package com.example.data
 
 import com.example.data.dataSource.local.TokenLocalDataSource
 import com.example.data.dataSource.remote.TokenRemoteDataSource
-import com.example.data.repository.TokenRepository
+import com.example.domain.repositories.TokenRepository
 import javax.inject.Inject
 
 class TokenRepositoryImpl @Inject constructor(

@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
-import com.example.data.usecases.LoginUseCase
+import com.example.domain.usecases.LoginUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 class ProfileViewModel @ViewModelInject constructor(

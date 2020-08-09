@@ -2,26 +2,31 @@ package com.example.alpaki.presentation.desktop
 
 import android.os.Bundle
 import android.view.View
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.alpaki.R
 import com.example.alpaki.core.views.base.BaseFragment
 import com.example.alpaki.databinding.FragmentDesktopBinding
 import com.example.alpaki.presentation.desktop.adapters.DreamCategoriesAdapter
 import com.example.alpaki.presentation.desktop.adapters.SponsorsAdapter
-import com.example.domain.models.DreamCategory
+import com.example.domain.models.Category
 import com.example.domain.models.Sponsor
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_desktop.*
 
+@AndroidEntryPoint
 class DesktopFragment : BaseFragment<FragmentDesktopBinding>() {
 
     override val layoutId: Int = R.layout.fragment_desktop
 
-    private val categoriesAdapter: DreamCategoriesAdapter by lazy {
-        DreamCategoriesAdapter(::onCategoryItemClick)
-    }
+    private val viewModel: DesktopViewModel by viewModels()
 
-    private val sponsorsAdapter: SponsorsAdapter by lazy {
-        SponsorsAdapter(::onSponsorItemClick)
+    private val categoriesAdapter: DreamCategoriesAdapter by lazy { DreamCategoriesAdapter(::onCategoryItemClick) }
+    private val sponsorsAdapter: SponsorsAdapter by lazy { SponsorsAdapter(::onSponsorItemClick) }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel.getCategories()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -64,7 +69,7 @@ class DesktopFragment : BaseFragment<FragmentDesktopBinding>() {
         )
     }
 
-    private fun onCategoryItemClick(item: DreamCategory) = Unit
+    private fun onCategoryItemClick(item: Category) = Unit
 
     private fun onSponsorItemClick(item: Sponsor) = Unit
 }

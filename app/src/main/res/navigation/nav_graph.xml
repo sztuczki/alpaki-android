@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     app:startDestination="@id/desktopFragment">
+
     <fragment
         android:id="@+id/desktopFragment"
         android:name="com.example.alpaki.presentation.desktop.DesktopFragment"

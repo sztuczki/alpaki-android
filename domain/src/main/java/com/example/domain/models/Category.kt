@@ -1,6 +1,6 @@
 package com.example.domain.models
 
-enum class DreamCategory {
+enum class Category {
 
     VISIT,
     GIFT,

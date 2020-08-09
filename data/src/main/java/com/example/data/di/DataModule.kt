@@ -1,26 +1,24 @@
 package com.example.data.di
 
-import com.example.data.TokenRepositoryImpl
 import com.example.data.dataSource.local.TokenLocalDataSource
 import com.example.data.dataSource.remote.TokenRemoteDataSource
-import com.example.data.repository.TokenRepository
-import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
 import javax.inject.Singleton
 
-@Module()
+@Module(
+    includes = [
+        RepositoriesModule::class,
+        RepositoriesBindings::class,
+        ServicesModule::class,
+        ServicesBindings::class,
+        EndpointsModule::class
+    ]
+)
 @InstallIn(ApplicationComponent::class)
-interface RepositoryBindings {
-
-    @Binds
-    fun bindTokenRepository(tokenRepositoryImpl: TokenRepositoryImpl): TokenRepository
-}
-@Module
-@InstallIn(ApplicationComponent::class)
-object DataComponentModule {
+object DataModule {
 
     @Singleton
     @Provides

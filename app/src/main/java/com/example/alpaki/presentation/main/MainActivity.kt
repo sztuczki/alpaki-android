@@ -7,8 +7,8 @@ import com.example.alpaki.core.navigation.NavigationHandler
 import com.example.alpaki.core.utils.ExampleInjectedClass
 import com.example.alpaki.core.views.base.BaseActivity
 import com.example.alpaki.databinding.ActivityMainBinding
-import com.example.data.usecases.ExampleUseCase
-import com.example.data.usecases.base.None
+import com.example.domain.usecases.ExampleUseCase
+import com.example.domain.usecases.base.None
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -30,14 +30,16 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         super.onCreate(savedInstanceState)
         navigationHandler.init(this)
 
-        exampleUseCase(lifecycleScope, None, { result ->
+        exampleUseCase(lifecycleScope,
+            None, { result ->
             handleResult(result)
         }, { error ->
             handleError(error)
         })
 
 //        alternatively
-        exampleUseCase(lifecycleScope, None, ::handleResult, ::handleError)
+        exampleUseCase(lifecycleScope,
+            None, ::handleResult, ::handleError)
     }
 
     private fun handleResult(result: String) = Unit

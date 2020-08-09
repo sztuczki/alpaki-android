@@ -1,7 +1,7 @@
-package com.example.data.usecases
+package com.example.domain.usecases
 
-import com.example.data.repository.TokenRepository
-import com.example.data.usecases.base.UseCase
+import com.example.domain.repositories.TokenRepository
+import com.example.domain.usecases.base.UseCase
 import javax.inject.Inject
 
 class LoginUseCase @Inject constructor(private val tokenRepository: TokenRepository) :

@@ -1,7 +1,7 @@
 package com.example.alpaki.di.main
 
-import com.example.data.repository.TokenRepository
-import com.example.data.usecases.LoginUseCase
+import com.example.domain.repositories.TokenRepository
+import com.example.domain.usecases.LoginUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
