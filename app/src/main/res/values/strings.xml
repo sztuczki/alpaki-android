@@ -29,6 +29,8 @@
     <string name="button_profile_login">Zaloguj się</string>
     <string name="button_profile_register">Zarejestruj się</string>
     <string name="text_forgotten_password">Nie pamiętasz hasła?</string>
+    <string name="text_error_missing_field">Pole nie może być puste</string>
+    <string name="text_error_wrong_email">Podano nieprawidłowy adres email</string>
 
     <!--my profile fragment-->
     <string name="text_profile_active">Aktywny</string>

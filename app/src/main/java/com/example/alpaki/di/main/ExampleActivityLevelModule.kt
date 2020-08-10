@@ -1,7 +1,7 @@
 package com.example.alpaki.di.main
 
 import com.example.domain.repositories.TokenRepository
-import com.example.domain.usecases.LoginUseCase
+import com.example.domain.usecases.Login
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,6 +12,6 @@ import dagger.hilt.android.components.ActivityComponent
 object ExampleActivityLevelModule {
 
     @Provides
-    fun provideLoginUseCase(tokenRepository: TokenRepository): LoginUseCase =
-        LoginUseCase(tokenRepository)
+    fun provideLoginUseCase(tokenRepository: TokenRepository): Login =
+        Login(tokenRepository)
 }
