@@ -10,6 +10,7 @@ import com.example.alpaki.R
 import com.example.alpaki.core.views.base.BaseFragment
 import com.example.alpaki.databinding.FragmentRegisterBinding
 import com.example.alpaki.presentation.util.isEmailValid
+import com.example.alpaki.presentation.util.isPasswordValid
 import com.example.alpaki.presentation.util.isPhoneValid
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_register.*
@@ -54,7 +55,7 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>() {
                     getString(R.string.text_error_wrong_phone)
                 email.value.isEmailValid().not() -> layoutTextEmail.error =
                     getString(R.string.text_error_wrong_email)
-                password.value.isNullOrEmpty() -> layoutTextPasswordRegister.error =
+                password.value.isPasswordValid() -> layoutTextPasswordRegister.error =
                     getString(R.string.text_error_missing_field)
                 activationCode.value.isNullOrEmpty() -> layoutTextActivationCode.error =
                     getString(R.string.text_error_missing_field)
