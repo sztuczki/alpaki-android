@@ -5,8 +5,7 @@ import com.example.data.api.models.DreamCategoryApiModel
 import com.example.domain.models.DreamCategory
 
 
-fun DreamCategoryApiModel.toDomain(): DreamCategory =
-    DreamCategory(
+fun DreamCategoryApiModel.toDomain() = DreamCategory(
         dreamCategoryId ?: ITEM_ID_INVALID,
         categoryName.orEmpty()
     )

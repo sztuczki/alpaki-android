@@ -1,5 +1,6 @@
 package com.example.alpaki.presentation.desktop
 
+import android.util.Log
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -33,8 +34,10 @@ class DesktopViewModel @ViewModelInject constructor(
     )
 
     private fun onGetDreamersSuccess(categories: List<Dreamer>) {
+        Log.i(this::class.simpleName, "onGetDreamersSuccess")
     }
 
     private fun onGetDreamersError(throwable: Throwable): Unit {
+        Log.i(this::class.simpleName, "onGetDreamersError")
     }
 }
