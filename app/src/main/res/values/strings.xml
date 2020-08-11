@@ -52,4 +52,6 @@
     <string name="text_register_terms">Zakładając konto, akceptujesz Regulamin oraz Politykę Prywatności Fundacji Mam Marzenie.</string>
     <string name="button_register_register">Zarejestruj się</string>
 
+    <!--tasks fragment-->
+    <string name="show_more">Więcej</string>
 </resources>
