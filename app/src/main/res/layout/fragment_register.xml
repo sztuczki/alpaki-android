@@ -2,6 +2,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.alpaki.presentation.fragments.RegisterViewModel" />
+    </data>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -51,6 +58,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/hint_register_name"
+                    android:text="@={viewModel.name}"
                     android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -68,6 +76,7 @@
                     android:id="@+id/editTextSurname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:text="@={viewModel.surname}"
                     android:hint="@string/hint_register_surname"
                     android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -87,7 +96,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/hint_register_phone"
-                    android:inputType="text" />
+                    android:text="@={viewModel.phone}"
+                    android:inputType="phone" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -105,11 +115,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/hint_register_email"
+                    android:text="@={viewModel.email}"
                     android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/layoutTextPassword"
+                android:id="@+id/layoutTextPasswordRegister"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_xsmall"
@@ -121,10 +132,11 @@
                 app:passwordToggleTint="@color/dimGray">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editTextPassword"
+                    android:id="@+id/editTextPasswordRegister"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/hint_register_password"
+                    android:text="@={viewModel.password}"
                     android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -136,13 +148,15 @@
                 android:theme="@style/TextInputLayout"
                 app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
                 app:layout_constraintStart_toStartOf="@id/guidelineStart"
-                app:layout_constraintTop_toBottomOf="@+id/layoutTextPassword">
+                app:layout_constraintTop_toBottomOf="@+id/layoutTextPasswordRegister">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextActivationCode"
                     android:layout_width="match_parent"
+                    android:imeOptions="actionDone"
                     android:layout_height="wrap_content"
                     android:hint="@string/hint_register_activation_code"
+                    android:text="@={viewModel.activationCode}"
                     android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -178,9 +192,6 @@
                 app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
                 app:layout_constraintStart_toStartOf="@+id/guidelineStart"
                 app:layout_constraintTop_toBottomOf="@+id/view_divider" />
-
-
-            //TODO [Adam] add proper imeOption on last textInputField
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/buttonNext"
