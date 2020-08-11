@@ -1,7 +1,8 @@
-package com.example.data
+package com.example.data.repositories
 
 import com.example.data.dataSource.local.TokenLocalDataSource
 import com.example.data.dataSource.remote.TokenRemoteDataSource
+import com.example.domain.models.UserCandidate
 import com.example.domain.repositories.TokenRepository
 import javax.inject.Inject
 
@@ -10,12 +11,11 @@ class TokenRepositoryImpl @Inject constructor(
     private val tokenRemoteDataSource: TokenRemoteDataSource
 ) : TokenRepository {
 
-    /*  override suspend fun logIn(email: String, password: String) = Unit*/
-
     override suspend fun logIn(email: String, password: String) {
-        tokenLocalDataSource.toString()
-        /*tokenRemoteDataSource.getToken(email, password).apply {
-            tokenLocalDataSource.saveToken(this)
-        }*/
+        // finish after connecting with backend
+    }
+
+    override suspend fun register(userCandidate: UserCandidate) {
+        // finish after connecting with backend
     }
 }
