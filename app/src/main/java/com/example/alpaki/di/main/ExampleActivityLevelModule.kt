@@ -3,6 +3,7 @@ package com.example.alpaki.di.main
 import com.example.domain.repositories.TokenRepository
 import com.example.domain.usecases.Login
 import com.example.domain.usecases.Register
+import com.example.domain.usecases.ResetPassword
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -37,4 +37,10 @@
         android:id="@+id/myProfileFragment"
         android:name="com.example.alpaki.presentation.profile.MyProfileFragment"
         android:label="MyProfileFragment" />
+
+    <fragment
+        android:id="@+id/resetPasswordFragment"
+        android:name="com.example.alpaki.presentation.login.ResetPasswordFragment"
+        android:label="fragment_reset_password"
+        tools:layout="@layout/fragment_reset_password" />
 </navigation>
