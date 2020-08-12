@@ -17,7 +17,7 @@ class ProfileViewModel @ViewModelInject constructor(
 
     fun logIn() {
         login(
-            CoroutineScope(Dispatchers.IO),
+            viewModelScope,
             Login.Params(email.value.toString(), password.value.toString()),
             { result ->
                 // Add logic after connecting to backend

@@ -31,7 +31,7 @@ class RegisterViewModel @ViewModelInject constructor(
 
     fun register() {
         register(
-            CoroutineScope(Dispatchers.IO),
+            viewModelScope,
             Register.Params(createUserCandidate()),
             onFailure = {
                 //error message
