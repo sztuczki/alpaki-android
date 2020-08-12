@@ -6,6 +6,10 @@
     <data>
 
         <variable
+            name="dreamer"
+            type="com.example.domain.models.Dreamer" />
+
+        <variable
             name="isFavourite"
             type="Boolean" />
     </data>
@@ -50,6 +54,7 @@
             android:layout_marginTop="@dimen/margin_xsmall"
             android:ellipsize="end"
             android:singleLine="true"
+            android:text="@{ dreamer.fullName }"
             android:textAppearance="@style/Text.H5.Secondary.Roboto.Regular"
             app:layout_constraintTop_toBottomOf="@+id/textItemDesktopLatestDream"
             tools:text="Bartosz (11 lat)" />

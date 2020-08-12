@@ -8,4 +8,12 @@ data class Dreamer(
     val gender: Int,
     val dreamUrl: String?,
     val tags: String?
-)
+) {
+
+    val fullName: String
+        get() = when {
+            firstName.isNullOrEmpty() -> lastName.orEmpty()
+            lastName.isNullOrEmpty() -> firstName.orEmpty()
+            else -> "$firstName $lastName"
+        }
+}
