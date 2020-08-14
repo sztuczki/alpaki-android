@@ -25,6 +25,7 @@
         <item name="boxBackgroundColor">@color/whiteSmoke</item>
         <item name="hintTextAppearance">@style/TextInputLayout.HintText</item>
         <item name="android:textColorHint">@color/dimGray</item>
+        <item name="android:maxLines">1</item>
         <item name="android:textAppearance">@style/Text.H5.Accent.Roboto.Regular</item>
         <item name="errorTextAppearance">@style/TextInputLayout.ErrorText</item>
     </style>

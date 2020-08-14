@@ -22,6 +22,12 @@
     <string name="text_desktop_category_give">Chcę\ndać</string>
     <string name="text_desktop_category_quick_mode">Tryb\nszybki</string>
 
+    <!--textInputLayouts errors-->
+    <string name="text_error_missing_field">Pole nie może być puste</string>
+    <string name="text_error_wrong_email">Podano nieprawidłowy adres email</string>
+    <string name="text_error_wrong_phone">Podano nieprawidłowy numer telefonu</string>
+    <string name="text_error_wrong_password">Hasło musi mieć minimum 8 znaków</string>
+
     <!--profile fragment-->
     <string name="text_profile_header_title">Zaloguj się</string>
     <string name="hint_profile_email" tools:ignore="Typos">Adres email</string>
@@ -29,8 +35,6 @@
     <string name="button_profile_login">Zaloguj się</string>
     <string name="button_profile_register">Zarejestruj się</string>
     <string name="text_forgotten_password">Nie pamiętasz hasła?</string>
-    <string name="text_error_missing_field">Pole nie może być puste</string>
-    <string name="text_error_wrong_email">Podano nieprawidłowy adres email</string>
 
     <!--my profile fragment-->
     <string name="text_profile_active">Aktywny</string>
