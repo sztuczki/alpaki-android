@@ -2,16 +2,16 @@ package com.example.alpaki.presentation.login
 
 import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.*
-import com.example.domain.usecases.Login
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.SavedStateHandle
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.domain.usecases.ResetPassword
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 
 class ResetPasswordViewModel @ViewModelInject constructor(
     @Assisted private val savedStateHandle: SavedStateHandle,
     private val resetPassword: ResetPassword
-) : ViewModel(), LifecycleObserver {
+) : ViewModel() {
 
     val email = MutableLiveData<String>()
 
