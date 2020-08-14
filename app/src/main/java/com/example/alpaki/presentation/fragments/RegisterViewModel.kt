@@ -2,16 +2,17 @@ package com.example.alpaki.presentation.fragments
 
 import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.*
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.SavedStateHandle
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.domain.models.UserCandidate
 import com.example.domain.usecases.Register
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 
 class RegisterViewModel @ViewModelInject constructor(
     @Assisted private val savedStateHandle: SavedStateHandle,
     private val register: Register
-) : ViewModel(), LifecycleObserver {
+) : ViewModel() {
 
     val name = MutableLiveData<String>()
     val surname = MutableLiveData<String>()
@@ -31,7 +32,7 @@ class RegisterViewModel @ViewModelInject constructor(
 
     fun register() {
         register(
-            CoroutineScope(Dispatchers.IO),
+            viewModelScope,
             Register.Params(createUserCandidate()),
             onFailure = {
                 //error message

@@ -5,10 +5,10 @@ import com.example.domain.models.UserCandidate
 
 fun UserCandidateApiModel.toDomain(): UserCandidate =
     UserCandidate(
-        name,
-        surname,
-        phone,
-        email,
-        password,
-        activationCode
+        name.orEmpty(),
+        surname.orEmpty(),
+        phone.orEmpty(),
+        email.orEmpty(),
+        password.orEmpty(),
+        activationCode.orEmpty()
     )
