@@ -44,7 +44,7 @@
                 android:paddingStart="@dimen/padding_xsmall"
                 android:paddingTop="@dimen/padding_xsmall"
                 android:paddingEnd="@dimen/padding_xsmall"
-                android:text="@string/more_done_dream_more"
+                android:text="@string/more_text_done_dream_card_view"
                 android:textColor="@color/pigmentGreen"
                 app:layout_constraintBottom_toTopOf="@id/done_dream_dreamer_image_image_view"
                 app:layout_constraintEnd_toEndOf="parent"

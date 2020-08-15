@@ -83,7 +83,7 @@
                 android:paddingStart="@dimen/padding_xsmall"
                 android:paddingTop="@dimen/padding_xsmall"
                 android:paddingEnd="@dimen/padding_xsmall"
-                android:text="@string/more_about_dreamer_button_text"
+                android:text="@string/more_about_dreamer_active_dream_card_view_button_text"
                 android:textColor="@color/pigmentGreen"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
