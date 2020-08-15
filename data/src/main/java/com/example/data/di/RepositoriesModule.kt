@@ -1,6 +1,6 @@
 package com.example.data.di
 
-import com.example.data.TokenRepositoryImpl
+import com.example.data.repositories.TokenRepositoryImpl
 import com.example.data.repositories.CategoriesRepositoryImpl
 import com.example.data.repositories.DreamersRepositoryImpl
 import com.example.domain.repositories.CategoriesRepository
