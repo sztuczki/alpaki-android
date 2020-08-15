@@ -15,7 +15,7 @@ import javax.inject.Singleton
         ServicesModule::class,
         ServicesBindings::class,
         EndpointsModule::class,
-        DataBaseModule::class
+        DatabaseModule::class
     ]
 )
 @InstallIn(ApplicationComponent::class)

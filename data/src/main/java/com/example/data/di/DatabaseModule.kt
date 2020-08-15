@@ -12,7 +12,7 @@ import javax.inject.Singleton
 
 @InstallIn(ApplicationComponent::class)
 @Module
-object DataBaseModule {
+object DatabaseModule {
     @Provides
     @Singleton
     fun provideAlpakiDb(application: Application): AlpakiDB {
