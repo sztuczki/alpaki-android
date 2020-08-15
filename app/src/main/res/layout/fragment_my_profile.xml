@@ -65,13 +65,13 @@
             </FrameLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:textAppearance="@style/Text.H1.Primary.Roboto.Regular.Bold"
-                android:textColor="@color/eclipse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="Jan Kowalski"
-                tools:text="Jan Kowalski"/>
+                android:textAppearance="@style/Text.H1.Primary.Roboto.Regular.Bold"
+                android:textColor="@color/eclipse"
+                tools:text="Jan Kowalski" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
@@ -170,6 +170,12 @@
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/activeDreamsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                tools:listitem="@layout/active_dream_card_view" />
+
             <View
                 style="@style/DecorationLine"
                 android:layout_width="match_parent"
@@ -203,8 +209,10 @@
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/done_dreams_recycler_view"
                 android:layout_width="match_parent"
-                android:layout_height="400dp" />
+                android:layout_height="400dp"
+                tools:listitem="@layout/done_dream_card_view" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

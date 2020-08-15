@@ -55,5 +55,7 @@
     <string name="text_register_lack_of_activation_code">Nie masz kodu aktywacyjnego? Skontaktuj się ze swoim koordynatorem.</string>
     <string name="text_register_terms">Zakładając konto, akceptujesz Regulamin oraz Politykę Prywatności Fundacji Mam Marzenie.</string>
     <string name="button_register_register">Zarejestruj się</string>
+    <string name="more_about_dreamer_button_text">WIĘCEJ O MARZYCIELU</string>
+    <string name="more_done_dream_more">WIĘCEJ</string>
 
 </resources>

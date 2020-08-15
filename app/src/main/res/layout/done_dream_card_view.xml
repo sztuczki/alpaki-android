@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tootls="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.example.alpaki.DreamModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/active_dream_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_xsmall"
+        app:cardCornerRadius="8dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:padding="@dimen/padding_medium">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/done_dream_name_text_view"
+                style="@style/Text.H2.Primary.Roboto.Medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{item.dreamName}"
+                android:textColor="@color/eclipse"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tootls:text="Wyjazd na Santorini" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/done_dream_more_about"
+                style="@style/Text.H6.Primary.Roboto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/padding_xsmall"
+                android:paddingTop="@dimen/padding_xsmall"
+                android:paddingEnd="@dimen/padding_xsmall"
+                android:text="@string/more_done_dream_more"
+                android:textColor="@color/pigmentGreen"
+                app:layout_constraintBottom_toTopOf="@id/done_dream_dreamer_image_image_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                tootls:text="WIĘCEJ" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/done_dream_dreamer_age_and_name_text_view"
+                style="@style/Text.H5.Primary.Roboto"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/padding_xsmall"
+                android:paddingEnd="@dimen/padding_xsmall"
+                android:text="@{item.dreamerName + ` / ` + String.valueOf(item.dreamerAge) + ` lat`}"
+                android:textColor="@color/eclipse"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/done_dream_name_text_view"
+                tootls:text="Małgosia / 8 lat" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/done_dream_category"
+                style="@style/Text.H6.Primary.Roboto"
+                android:background="@drawable/round_corners_drawable"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/padding_xsmall"
+                android:paddingTop="@dimen/padding_xsmall"
+                android:paddingEnd="@dimen/padding_xsmall"
+                android:text="@{item.categoryName}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/done_dream_dreamer_age_and_name_text_view"
+                tootls:text="CHCĘ POJECHAĆ" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/done_dream_dreamer_image_image_view"
+                urlImage="@{item.imageUrl}"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="@dimen/margin_medium"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/done_dream_name_text_view" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
