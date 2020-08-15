@@ -6,4 +6,6 @@ interface TokenRepository {
     suspend fun logIn(email: String, password: String)
 
     suspend fun register(userCandidate: UserCandidate)
+
+    suspend fun resetPassword(email: String)
 }

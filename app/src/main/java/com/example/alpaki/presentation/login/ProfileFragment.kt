@@ -24,6 +24,9 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
         buttonRegister.setOnClickListener {
             openRegisterProcess()
         }
+        textResetPassword.setOnClickListener {
+            openResetPasswordFragment()
+        }
         buttonLogIn.setOnClickListener {
             clearErrors()
             if (isEmailPasswordCorrect()) profileViewModel.logIn()
@@ -49,6 +52,8 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
         layoutTextEmail.isErrorEnabled = false
         layoutTextPassword.isErrorEnabled = false
     }
+
+    private fun openResetPasswordFragment() = findNavController().navigate(R.id.resetPasswordFragment)
 
     private fun openRegisterProcess() = findNavController().navigate(R.id.registerFragment)
 }
