@@ -2,7 +2,7 @@ package com.example.data.di
 
 import android.app.Application
 import androidx.room.Room
-import com.example.data.database.AlpakiDB
+import com.example.data.database.AlpakiDatabase
 import com.example.data.database.dao.DreamCategoryDao
 import dagger.Module
 import dagger.Provides
@@ -15,16 +15,15 @@ import javax.inject.Singleton
 object DatabaseModule {
     @Provides
     @Singleton
-    fun provideAlpakiDb(application: Application): AlpakiDB {
-        return Room.databaseBuilder(application, AlpakiDB::class.java, "AlpakiDatabase")
+    fun provideAlpakiDb(application: Application): AlpakiDatabase {
+        return Room.databaseBuilder(application, AlpakiDatabase::class.java, "AlpakiDatabase")
             .fallbackToDestructiveMigration()
-            .allowMainThreadQueries()
             .build()
     }
 
     @Singleton
     @Provides
-    fun provideDreamCategoryDao(alpakiDB: AlpakiDB): DreamCategoryDao {
-        return alpakiDB.dreamCategoryDao()
+    fun AlpakiDatabase.provideDreamCategoryDao(): DreamCategoryDao {
+        return dreamCategoryDao()
     }
 }
