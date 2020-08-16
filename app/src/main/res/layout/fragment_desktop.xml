@@ -144,10 +144,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_medium"
-                android:background="@color/colorAccent"
-                android:minHeight="200dp"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
                 android:paddingHorizontal="@dimen/padding_medium"
-                app:layout_constraintTop_toBottomOf="@+id/textDesktopHeaderDreamers" />
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/textDesktopHeaderDreamers"
+                tools:listitem="@layout/item_desktop_person" />
 
             <TextView
                 android:id="@+id/textDesktopHeaderVolunteers"

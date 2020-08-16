@@ -10,6 +10,7 @@ import com.example.alpaki.core.livedata.wrappers.State
 import com.example.alpaki.core.views.base.BaseFragment
 import com.example.alpaki.databinding.FragmentDesktopBinding
 import com.example.alpaki.presentation.desktop.adapters.DesktopCategoriesAdapter
+import com.example.alpaki.presentation.desktop.adapters.DesktopDreamersAdapter
 import com.example.alpaki.presentation.desktop.adapters.DesktopLatestAdapter
 import com.example.alpaki.presentation.desktop.adapters.DesktopSponsorsAdapter
 import com.example.domain.models.Category
@@ -27,6 +28,7 @@ class DesktopFragment : BaseFragment<FragmentDesktopBinding>() {
     private val latestAdapter: DesktopLatestAdapter by lazy { DesktopLatestAdapter() }
     private val categoriesAdapter: DesktopCategoriesAdapter by lazy { DesktopCategoriesAdapter(::onCategoryItemClick) }
     private val sponsorsAdapter: DesktopSponsorsAdapter by lazy { DesktopSponsorsAdapter(::onSponsorItemClick) }
+    private val dreamersAdapter: DesktopDreamersAdapter by lazy { DesktopDreamersAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +48,7 @@ class DesktopFragment : BaseFragment<FragmentDesktopBinding>() {
         setupLatestRecyclerView()
         setupCategoriesRecyclerView()
         setupSponsorsRecyclerView()
+        setupDreamersRecyclerView()
     }
 
     private fun setupLatestRecyclerView() {
@@ -85,9 +88,22 @@ class DesktopFragment : BaseFragment<FragmentDesktopBinding>() {
         )
     }
 
+    private fun setupDreamersRecyclerView() {
+        val decoration = DividerItemDecoration(context, DividerItemDecoration.HORIZONTAL).apply {
+            setDrawable(resources.getDrawable(R.drawable.divider_horizontal_space_20dp, null))
+        }
+        rvDesktopDreamers.apply {
+            adapter = dreamersAdapter
+            addItemDecoration(decoration)
+        }
+    }
+
     private fun setupViewLiveDataObservers() {
         viewModel.dreamers.observe(viewLifecycleOwner, Observer { state ->
-            if (state is State.Success) latestAdapter.submitList(state.data)
+            if (state is State.Success) {
+                latestAdapter.submitList(state.data)
+                dreamersAdapter.submitList(state.data)
+            }
         })
     }
 
