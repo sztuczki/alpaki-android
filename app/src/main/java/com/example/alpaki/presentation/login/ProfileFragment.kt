@@ -3,8 +3,10 @@ package com.example.alpaki.presentation.login
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.alpaki.R
+import com.example.alpaki.core.livedata.wrappers.State
 import com.example.alpaki.core.views.base.BaseFragment
 import com.example.alpaki.databinding.FragmentProfileBinding
 import com.example.alpaki.presentation.util.isEmailValid
@@ -31,6 +33,29 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
             clearErrors()
             if (isEmailPasswordCorrect()) profileViewModel.logIn()
         }
+        setupViewLiveDataObservers()
+    }
+
+    private fun setupViewLiveDataObservers() {
+        with(profileViewModel) {
+            success.observe(viewLifecycleOwner, Observer { state ->
+                if (state is State.Success) {
+                    onLoginSuccess()
+                }
+            })
+            error.observe(viewLifecycleOwner, Observer { state ->
+                if (state is State.Error) {
+                    onLoginError()
+                }
+            })
+        }
+    }
+
+    private fun onLoginSuccess() = openMyProfileFragment()
+
+    private fun onLoginError() {
+        layoutTextEmail.error = getString(R.string.text_error_login)
+        layoutTextPassword.error = getString(R.string.text_error_login)
     }
 
     private fun isEmailPasswordCorrect(): Boolean {
@@ -53,7 +78,10 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
         layoutTextPassword.isErrorEnabled = false
     }
 
-    private fun openResetPasswordFragment() = findNavController().navigate(R.id.resetPasswordFragment)
+    private fun openResetPasswordFragment() =
+        findNavController().navigate(R.id.resetPasswordFragment)
 
     private fun openRegisterProcess() = findNavController().navigate(R.id.registerFragment)
+
+    private fun openMyProfileFragment() = findNavController().navigate(R.id.myProfileFragment)
 }

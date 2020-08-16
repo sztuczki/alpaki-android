@@ -8,7 +8,7 @@ class Login @Inject constructor(private val tokenRepository: TokenRepository) :
     UseCase<Login.Params, Unit>() {
 
     override suspend fun run(params: Params) =
-        tokenRepository.logIn(params.email, params.password)
+        tokenRepository.logIn(params)
 
-    data class Params(val email: String, val password: String)
+    data class Params(val login: String, val password: String)
 }
