@@ -40,9 +40,11 @@ class DesktopDreamersAdapter
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: Dreamer) {
-            binding.imageItemDesktopPerson.setImageResource(R.drawable.ic_item_dreamer_placeholder_80dp)
-            binding.textItemDesktopPersonName.text = item.fullName
-            binding.textItemDesktopPersonCity.text = "Placeholder city"
+            with(binding) {
+                imageItemDesktopPerson.setImageResource(R.drawable.ic_item_dreamer_placeholder_80dp)
+                textItemDesktopPersonName.text = item.fullName
+                textItemDesktopPersonCity.text = "Placeholder city"
+            }
         }
     }
 }
