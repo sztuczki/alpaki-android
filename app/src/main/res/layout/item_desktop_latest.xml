@@ -6,6 +6,10 @@
     <data>
 
         <variable
+            name="dreamer"
+            type="com.example.domain.models.Dreamer" />
+
+        <variable
             name="isFavourite"
             type="Boolean" />
     </data>
@@ -39,6 +43,7 @@
             android:layout_marginTop="@dimen/margin_xsmall"
             android:ellipsize="end"
             android:singleLine="true"
+            android:text="Placeholder title"
             android:textAppearance="@style/Text.H5.Primary.Roboto.Regular"
             app:layout_constraintTop_toBottomOf="@+id/imageItemDesktopLatest"
             tools:text="Komputer" />
@@ -63,6 +68,7 @@
             android:ellipsize="end"
             android:paddingHorizontal="@dimen/padding_xsmall"
             android:singleLine="true"
+            android:text="Placeholder category"
             android:textAppearance="@style/Text.H5.Secondary.Roboto.Regular"
             android:textSize="10sp"
             app:layout_constrainedWidth="true"

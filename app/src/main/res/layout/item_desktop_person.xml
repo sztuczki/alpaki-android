@@ -13,9 +13,9 @@
             android:id="@+id/imageItemDesktopPerson"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:src="@drawable/ic_item_volunteer_placeholder_80dp"
             app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_item_volunteer_placeholder_80dp" />
 
         <TextView
             android:id="@+id/textItemDesktopPersonName"

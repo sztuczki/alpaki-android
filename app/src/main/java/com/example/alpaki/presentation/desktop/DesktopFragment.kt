@@ -3,12 +3,16 @@ package com.example.alpaki.presentation.desktop
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.alpaki.R
+import com.example.alpaki.core.livedata.wrappers.State
 import com.example.alpaki.core.views.base.BaseFragment
 import com.example.alpaki.databinding.FragmentDesktopBinding
-import com.example.alpaki.presentation.desktop.adapters.DreamCategoriesAdapter
-import com.example.alpaki.presentation.desktop.adapters.SponsorsAdapter
+import com.example.alpaki.presentation.desktop.adapters.DesktopCategoriesAdapter
+import com.example.alpaki.presentation.desktop.adapters.DesktopDreamersAdapter
+import com.example.alpaki.presentation.desktop.adapters.DesktopLatestAdapter
+import com.example.alpaki.presentation.desktop.adapters.DesktopSponsorsAdapter
 import com.example.domain.models.Category
 import com.example.domain.models.Sponsor
 import dagger.hilt.android.AndroidEntryPoint
@@ -21,16 +25,19 @@ class DesktopFragment : BaseFragment<FragmentDesktopBinding>() {
 
     private val viewModel: DesktopViewModel by viewModels()
 
-    private val categoriesAdapter: DreamCategoriesAdapter by lazy { DreamCategoriesAdapter(::onCategoryItemClick) }
-    private val sponsorsAdapter: SponsorsAdapter by lazy { SponsorsAdapter(::onSponsorItemClick) }
+    private val latestAdapter: DesktopLatestAdapter by lazy { DesktopLatestAdapter() }
+    private val categoriesAdapter: DesktopCategoriesAdapter by lazy { DesktopCategoriesAdapter(::onCategoryItemClick) }
+    private val sponsorsAdapter: DesktopSponsorsAdapter by lazy { DesktopSponsorsAdapter(::onSponsorItemClick) }
+    private val dreamersAdapter: DesktopDreamersAdapter by lazy { DesktopDreamersAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel.getCategories()
+        viewModel.getDreamers()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         setupView()
+        setupViewLiveDataObservers()
     }
 
     private fun setupView() {
@@ -38,8 +45,20 @@ class DesktopFragment : BaseFragment<FragmentDesktopBinding>() {
     }
 
     private fun setupRecyclerViews() {
+        setupLatestRecyclerView()
         setupCategoriesRecyclerView()
         setupSponsorsRecyclerView()
+        setupDreamersRecyclerView()
+    }
+
+    private fun setupLatestRecyclerView() {
+        val decoration = DividerItemDecoration(context, DividerItemDecoration.HORIZONTAL).apply {
+            setDrawable(resources.getDrawable(R.drawable.divider_horizontal_space_10dp, null))
+        }
+        rvDesktopLatest.apply {
+            adapter = latestAdapter
+            addItemDecoration(decoration)
+        }
     }
 
     private fun setupCategoriesRecyclerView() {
@@ -69,7 +88,33 @@ class DesktopFragment : BaseFragment<FragmentDesktopBinding>() {
         )
     }
 
+    private fun setupDreamersRecyclerView() {
+        val decoration = DividerItemDecoration(context, DividerItemDecoration.HORIZONTAL).apply {
+            setDrawable(resources.getDrawable(R.drawable.divider_horizontal_space_20dp, null))
+        }
+        rvDesktopDreamers.apply {
+            adapter = dreamersAdapter
+            addItemDecoration(decoration)
+        }
+    }
+
+    private fun setupViewLiveDataObservers() {
+        viewModel.dreamers.observe(viewLifecycleOwner, Observer { state ->
+            if (state is State.Success) {
+                latestAdapter.submitList(state.data)
+                dreamersAdapter.submitList(state.data)
+            }
+        })
+    }
+
     private fun onCategoryItemClick(item: Category) = Unit
 
     private fun onSponsorItemClick(item: Sponsor) = Unit
+
+    override fun onDestroyView() {
+        rvDesktopLatest.adapter = null
+        rvDesktopCategories.adapter = null
+        rvDesktopSponsors.adapter = null
+        super.onDestroyView()
+    }
 }
