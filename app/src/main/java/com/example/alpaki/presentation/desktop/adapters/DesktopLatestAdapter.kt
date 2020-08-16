@@ -40,6 +40,13 @@ class DesktopLatestAdapter() : ListAdapter<Dreamer, LatestDreamViewHolder>(ItemC
 
         fun bind(dreamer: Dreamer) {
             binding.dreamer = dreamer
+            val formattedName: String = StringBuilder().run {
+                append(dreamer.fullName)
+                if (dreamer.fullName.isNotEmpty()) append(" ")
+                append("(${dreamer.age} l.)")
+                toString()
+            }
+            binding.textItemDesktopLatestDreamer.text = formattedName
         }
     }
 }
