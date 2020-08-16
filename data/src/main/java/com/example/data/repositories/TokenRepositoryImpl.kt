@@ -18,4 +18,8 @@ class TokenRepositoryImpl @Inject constructor(
     override suspend fun register(userCandidate: UserCandidate) {
         // finish after connecting with backend
     }
+
+    override suspend fun resetPassword(email: String) {
+        // finish after connecting with backend
+    }
 }

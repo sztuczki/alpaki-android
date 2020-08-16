@@ -13,6 +13,7 @@ import com.example.alpaki.presentation.util.isEmailValid
 import com.example.alpaki.presentation.util.isPasswordValid
 import com.example.alpaki.presentation.util.isPhoneValid
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.fragment_profile.*
 import kotlinx.android.synthetic.main.fragment_register.*
 import kotlinx.android.synthetic.main.fragment_register.layoutTextEmail
 

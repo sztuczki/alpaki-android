@@ -10,7 +10,9 @@ class GetCategories @Inject constructor(
     private val categoriesRepository: CategoriesRepository
 ) : UseCase<None, List<DreamCategory>>() {
 
-    override suspend fun run(params: None): List<DreamCategory> {
-        return categoriesRepository.getCategories()
-    }
+    override suspend fun run(params: None): List<DreamCategory> =
+        with(categoriesRepository) {
+            saveCategories()
+            return getCategories()
+        }
 }

@@ -1,7 +1,5 @@
 package com.example.data.api
 
-const val ITEM_ID_INVALID: Long = -1
-
 //    Dreamers params
 const val PARAM_DREAMERS_SEARCH_NAME = "SearchName"
 const val PARAM_DREAMERS_GENDER = "Gender"
