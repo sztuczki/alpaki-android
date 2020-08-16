@@ -1,7 +1,7 @@
 package com.example.data.api.models
 
 data class DreamerApiModel(
-    val dreamId: Long?,
+    val dreamId: Long,
     val firstName: String?,
     val lastName: String?,
     val age: Int?,

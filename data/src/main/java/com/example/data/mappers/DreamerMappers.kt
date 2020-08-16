@@ -1,11 +1,10 @@
 package com.example.data.mappers
 
-import com.example.data.api.ITEM_ID_INVALID
 import com.example.data.api.models.DreamerApiModel
 import com.example.domain.models.Dreamer
 
 fun DreamerApiModel.toDomain() = Dreamer(
-    dreamId ?: ITEM_ID_INVALID,
+    dreamId,
     firstName,
     lastName,
     age ?: 0,
