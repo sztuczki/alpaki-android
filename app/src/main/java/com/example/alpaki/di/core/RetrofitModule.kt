@@ -1,6 +1,7 @@
 package com.example.alpaki.di.core
 
 import com.example.alpaki.BuildConfig
+import com.example.data.api.interceptors.AuthInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,9 +26,11 @@ object RetrofitModule {
 
     @Provides
     fun provideOkHttpClient(
-        interceptor: HttpLoggingInterceptor
+        loggingInterceptor: HttpLoggingInterceptor,
+        authInterceptor: AuthInterceptor
     ): OkHttpClient = OkHttpClient.Builder()
-        .addInterceptor(interceptor)
+        .addInterceptor(loggingInterceptor)
+        .addInterceptor(authInterceptor)
         .build()
 
     @Provides

@@ -1,6 +1,7 @@
 package com.example.data.api
 
-//    Dreamers params
+const val HEADER_AUTHORIZATION = "Authorization"
+
 const val PARAM_DREAMERS_SEARCH_NAME = "SearchName"
 const val PARAM_DREAMERS_GENDER = "Gender"
 const val PARAM_DREAMERS_STATUS = "Status"
