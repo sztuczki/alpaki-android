@@ -8,9 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.alpaki.databinding.ItemDesktopSponsorBinding
 import com.example.domain.models.Sponsor
 
-class SponsorsAdapter(
+class DesktopSponsorsAdapter(
     private val onItemClick: (Sponsor) -> Unit
-) : ListAdapter<Sponsor, SponsorsAdapter.SponsorViewHolder>(ItemCallback) {
+) : ListAdapter<Sponsor, DesktopSponsorsAdapter.SponsorViewHolder>(ItemCallback) {
 
     companion object {
         private val ItemCallback = object : DiffUtil.ItemCallback<Sponsor>() {
