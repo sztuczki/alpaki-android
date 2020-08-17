@@ -62,4 +62,6 @@
     <string name="more_about_dreamer_active_dream_card_view_button_text">WIĘCEJ O MARZYCIELU</string>
     <string name="more_text_done_dream_card_view">WIĘCEJ</string>
 
+    <!--tasks fragment-->
+    <string name="show_more">Więcej</string>
 </resources>
