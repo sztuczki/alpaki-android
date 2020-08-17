@@ -47,6 +47,10 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="Text.H2.Eclipse">
+        <item name="color">@color/eclipse</item>
+    </style>
+
     <!-- H3 -->
     <style name="Text.H3">
         <item name="android:textSize">@dimen/text_h3</item>
@@ -122,5 +126,13 @@
 
     <style name="Text.H6.Primary.Roboto.Regular">
         <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="Text.H6.Accent">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="Text.H6.Accent.AllCaps">
+        <item name="android:textAllCaps">true</item>
     </style>
 </resources>
