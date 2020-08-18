@@ -33,6 +33,7 @@
         android:name="com.example.alpaki.presentation.fragments.RegisterFragment"
         android:label="RegisterFragment"
         tools:layout="@layout/fragment_register" />
+
     <fragment
         android:id="@+id/myProfileFragment"
         android:name="com.example.alpaki.presentation.profile.MyProfileFragment"

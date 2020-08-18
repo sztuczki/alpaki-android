@@ -8,6 +8,10 @@
         <variable
             name="tmp"
             type="com.example.alpaki.presentation.profile.MyProfileFragment" />
+
+        <variable
+            name="viewModel"
+            type="com.example.alpaki.presentation.profile.MyProfileViewModel" />
     </data>
 
     <androidx.core.widget.NestedScrollView
@@ -142,6 +146,7 @@
                 android:layout_marginTop="@dimen/margin_xlarge"
                 android:layout_marginEnd="@dimen/margin_medium"
                 android:layout_marginBottom="@dimen/margin_small"
+                android:onClick="@{() -> viewModel.logOut()}"
                 android:text="@string/button_profile_logout" />
 
             <androidx.appcompat.widget.LinearLayoutCompat

@@ -5,11 +5,13 @@ import com.example.domain.repositories.TokenRepository
 import com.example.domain.usecases.base.UseCase
 import javax.inject.Inject
 
-class Register @Inject constructor(private val tokenRepository: TokenRepository) :
+//Fixing that UseCase in next PR
+class Register @Inject constructor(
+
+) :
     UseCase<Register.Params, Unit>() {
 
-    override suspend fun run(params: Params) =
-        tokenRepository.register(params.userCandidate)
+    override suspend fun run(params: Params) = Unit
 
     data class Params(val userCandidate: UserCandidate)
 }

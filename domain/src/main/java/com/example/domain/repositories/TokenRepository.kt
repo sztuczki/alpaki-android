@@ -1,11 +1,8 @@
 package com.example.domain.repositories
 
-import com.example.domain.models.UserCandidate
+import com.example.domain.usecases.Login
 
 interface TokenRepository {
-    suspend fun logIn(email: String, password: String)
-
-    suspend fun register(userCandidate: UserCandidate)
-
-    suspend fun resetPassword(email: String)
+    suspend fun logIn(params: Login.Params)
+    suspend fun clearToken()
 }
