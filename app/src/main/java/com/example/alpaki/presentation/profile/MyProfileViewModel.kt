@@ -2,7 +2,12 @@ package com.example.alpaki.presentation.profile
 
 import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MediatorLiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.SavedStateHandle
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.alpaki.core.livedata.wrappers.State
 import com.example.domain.usecases.Logout
 import com.example.domain.usecases.base.None

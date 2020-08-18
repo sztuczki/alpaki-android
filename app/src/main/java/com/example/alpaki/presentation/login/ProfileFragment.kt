@@ -60,7 +60,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
 
     private fun isEmailPasswordCorrect(): Boolean {
         with(profileViewModel) {
-             when {
+            when {
                 email.value.isNullOrEmpty() -> layoutTextEmail.error =
                     getString(R.string.text_error_missing_field)
                 password.value.isNullOrEmpty() -> layoutTextPassword.error =
