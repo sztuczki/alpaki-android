@@ -1,10 +1,6 @@
 package com.example.domain.models
 
-enum class Category {
-    VISIT,
-    GIFT,
-    MEET,
-    BECOME,
-    GIVE,
-    QUICK_MODE
-}
+data class Category(
+    val dreamCategoryId: Int,
+    val dreamCategoryName: String
+)

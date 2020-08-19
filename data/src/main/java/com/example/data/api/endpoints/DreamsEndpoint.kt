@@ -1,14 +1,13 @@
 package com.example.data.api.endpoints
 
 import com.example.data.api.*
-import com.example.data.api.models.responses.GetDreamersResponse
+import com.example.data.api.models.responses.GetDreamsResponse
 import retrofit2.http.GET
-import retrofit2.http.Headers
 import retrofit2.http.Query
 
-interface DreamersEndpoint {
+interface DreamsEndpoint {
 
-    @GET("api/Dreamers")
+    @GET("api/Dreams")
     suspend fun getDreamers(
         @Query(PARAM_DREAMERS_SEARCH_NAME) searchName: String?,
         @Query(PARAM_DREAMERS_GENDER) gender: Int?,
@@ -19,5 +18,5 @@ interface DreamersEndpoint {
         @Query(PARAM_DREAMERS_ASC) asc: Boolean?,
         @Query(PARAM_DREAMERS_ORDER_BY) orderBy: String?,
         @Query(PARAM_DREAMERS_PAGE) page: Int?
-    ): GetDreamersResponse
+    ): GetDreamsResponse
 }

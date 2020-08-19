@@ -1,14 +1,14 @@
 package com.example.domain.usecases.base
 
-import com.example.domain.models.Dreamer
+import com.example.domain.models.Dream
 import com.example.domain.repositories.DreamersRepository
 import javax.inject.Inject
 
 class GetDreamers @Inject constructor(
     private val dreamersRepository: DreamersRepository
-) : UseCase<GetDreamers.Params?, List<Dreamer>>() {
+) : UseCase<GetDreamers.Params?, List<Dream>>() {
 
-    override suspend fun run(params: Params?): List<Dreamer> {
+    override suspend fun run(params: Params?): List<Dream> {
         return dreamersRepository.getDreamers(params)
     }
 

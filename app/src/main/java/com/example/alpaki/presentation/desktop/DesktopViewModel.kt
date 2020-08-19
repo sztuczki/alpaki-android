@@ -6,8 +6,8 @@ import android.util.Log
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import com.example.alpaki.core.livedata.wrappers.State
+import com.example.domain.models.Dream
 import com.example.domain.models.DreamCategory
-import com.example.domain.models.Dreamer
 import com.example.domain.usecases.GetCategories
 import com.example.domain.usecases.base.GetDreamers
 import com.example.domain.usecases.base.None
@@ -17,8 +17,8 @@ class DesktopViewModel @ViewModelInject constructor(
     private val getDreamers: GetDreamers
 ) : ViewModel() {
 
-    private val _dreamers = MutableLiveData<State<List<Dreamer>>>()
-    val dreamers: LiveData<State<List<Dreamer>>> = _dreamers
+    private val _dreams = MutableLiveData<State<List<Dream>>>()
+    val dreams: LiveData<State<List<Dream>>> = _dreams
 
     private val _isLoading = MediatorLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
@@ -27,7 +27,7 @@ class DesktopViewModel @ViewModelInject constructor(
     val error: LiveData<State<Throwable>> = _error
 
     init {
-        _isLoading.addSource(dreamers) { _isLoading.value = it is State.Loading }
+        _isLoading.addSource(dreams) { _isLoading.value = it is State.Loading }
     }
 
     fun getCategories() = getCategories(
@@ -50,8 +50,8 @@ class DesktopViewModel @ViewModelInject constructor(
         ::onGetDreamersError
     )
 
-    private fun onGetDreamersSuccess(dreamers: List<Dreamer>) {
-        _dreamers.setValue(State.Success(dreamers))
+    private fun onGetDreamersSuccess(dreams: List<Dream>) {
+        _dreams.setValue(State.Success(dreams))
     }
 
     private fun onGetDreamersError(throwable: Throwable) {

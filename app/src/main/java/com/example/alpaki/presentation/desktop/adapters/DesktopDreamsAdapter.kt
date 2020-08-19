@@ -7,19 +7,19 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.alpaki.R
 import com.example.alpaki.databinding.ItemDesktopPersonBinding
-import com.example.domain.models.Dreamer
+import com.example.domain.models.Dream
 
-class DesktopDreamersAdapter
-    : ListAdapter<Dreamer, DesktopDreamersAdapter.DreamerViewHolder>(ITEM_CALLBACK) {
+class DesktopDreamsAdapter
+    : ListAdapter<Dream, DesktopDreamsAdapter.DreamerViewHolder>(ITEM_CALLBACK) {
 
     companion object {
-        private val ITEM_CALLBACK = object : DiffUtil.ItemCallback<Dreamer>() {
+        private val ITEM_CALLBACK = object : DiffUtil.ItemCallback<Dream>() {
 
-            override fun areItemsTheSame(oldItem: Dreamer, newItem: Dreamer): Boolean {
+            override fun areItemsTheSame(oldItem: Dream, newItem: Dream): Boolean {
                 return oldItem.dreamId == newItem.dreamId
             }
 
-            override fun areContentsTheSame(oldItem: Dreamer, newItem: Dreamer): Boolean {
+            override fun areContentsTheSame(oldItem: Dream, newItem: Dream): Boolean {
                 return oldItem == newItem
             }
         }
@@ -39,10 +39,10 @@ class DesktopDreamersAdapter
         private val binding: ItemDesktopPersonBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: Dreamer) {
+        fun bind(item: Dream) {
             with(binding) {
                 imageItemDesktopPerson.setImageResource(R.drawable.ic_item_dreamer_placeholder_80dp)
-                textItemDesktopPersonName.text = item.fullName
+                textItemDesktopPersonName.text = item.displayName
                 textItemDesktopPersonCity.text = "Placeholder city"
             }
         }

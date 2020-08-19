@@ -1,7 +1,7 @@
 package com.example.data.di
 
 import com.example.data.api.endpoints.CategoriesEndpoint
-import com.example.data.api.endpoints.DreamersEndpoint
+import com.example.data.api.endpoints.DreamsEndpoint
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,7 +18,7 @@ object EndpointsModule {
     }
 
     @Provides
-    fun provideDreamersEndpoint(retrofit: Retrofit): DreamersEndpoint {
-        return retrofit.create(DreamersEndpoint::class.java)
+    fun provideDreamersEndpoint(retrofit: Retrofit): DreamsEndpoint {
+        return retrofit.create(DreamsEndpoint::class.java)
     }
 }
