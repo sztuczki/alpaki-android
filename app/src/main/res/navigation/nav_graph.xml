@@ -30,7 +30,7 @@
 
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.alpaki.presentation.fragments.RegisterFragment"
+        android:name="com.example.alpaki.presentation.register.RegisterFragment"
         android:label="RegisterFragment"
         tools:layout="@layout/fragment_register" />
 
