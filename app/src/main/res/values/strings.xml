@@ -27,6 +27,7 @@
     <string name="text_error_wrong_email">Podano nieprawidłowy adres email</string>
     <string name="text_error_wrong_phone">Podano nieprawidłowy numer telefonu</string>
     <string name="text_error_wrong_password">Hasło musi mieć minimum 8 znaków</string>
+    <string name="text_error_login">Logowanie się nie powiodło</string>
 
     <!--profile fragment-->
     <string name="text_profile_header_title">Zaloguj się</string>

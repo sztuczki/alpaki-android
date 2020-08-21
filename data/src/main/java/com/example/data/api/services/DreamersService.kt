@@ -4,7 +4,7 @@ import com.example.data.api.endpoints.DreamersEndpoint
 import com.example.data.api.services.base.ApiService
 import com.example.data.mappers.toDomainList
 import com.example.domain.models.Dreamer
-import com.example.domain.usecases.base.GetDreamers
+import com.example.domain.usecases.GetDreamers
 import javax.inject.Inject
 
 interface DreamersService {

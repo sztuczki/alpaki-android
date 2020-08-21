@@ -2,6 +2,9 @@ package com.example.data.api
 
 const val HEADER_AUTHORIZATION = "Authorization"
 
+const val PREF_FILE_NAME = "pref_file"
+const val TOKEN_KEY = "token_key"
+
 const val PARAM_DREAMERS_SEARCH_NAME = "SearchName"
 const val PARAM_DREAMERS_GENDER = "Gender"
 const val PARAM_DREAMERS_STATUS = "Status"
