@@ -3,9 +3,11 @@ package com.example.data.di
 import com.example.data.repositories.TokenRepositoryImpl
 import com.example.data.repositories.CategoriesRepositoryImpl
 import com.example.data.repositories.DreamersRepositoryImpl
+import com.example.data.repositories.VolunteerRepositoryImpl
 import com.example.domain.repositories.CategoriesRepository
 import com.example.domain.repositories.DreamersRepository
 import com.example.domain.repositories.TokenRepository
+import com.example.domain.repositories.VolunteerRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -27,4 +29,7 @@ interface RepositoriesBindings {
 
     @Binds
     fun bindDreamersRepository(repository: DreamersRepositoryImpl): DreamersRepository
+
+    @Binds
+    fun bindVolunteersRepository(repository: VolunteerRepositoryImpl): VolunteerRepository
 }

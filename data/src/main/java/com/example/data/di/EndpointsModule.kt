@@ -3,6 +3,7 @@ package com.example.data.di
 import com.example.data.api.endpoints.AuthorizationEndpoint
 import com.example.data.api.endpoints.CategoriesEndpoint
 import com.example.data.api.endpoints.DreamersEndpoint
+import com.example.data.api.endpoints.VolunteerEndpoint
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -26,5 +27,10 @@ object EndpointsModule {
     @Provides
     fun provideAuthorizationEndpoint(retrofit: Retrofit): AuthorizationEndpoint {
         return retrofit.create(AuthorizationEndpoint::class.java)
+    }
+
+    @Provides
+    fun provideVolunteerEndpoint(retrofit: Retrofit): VolunteerEndpoint {
+        return retrofit.create(VolunteerEndpoint::class.java)
     }
 }

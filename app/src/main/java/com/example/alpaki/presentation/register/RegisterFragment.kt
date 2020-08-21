@@ -1,21 +1,27 @@
-package com.example.alpaki.presentation.fragments
+package com.example.alpaki.presentation.register
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import android.widget.ArrayAdapter
+import android.widget.SpinnerAdapter
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.example.alpaki.R
+import com.example.alpaki.core.livedata.wrappers.State
 import com.example.alpaki.core.views.base.BaseFragment
 import com.example.alpaki.databinding.FragmentRegisterBinding
+import com.example.alpaki.presentation.util.isCodeValid
 import com.example.alpaki.presentation.util.isEmailValid
 import com.example.alpaki.presentation.util.isPasswordValid
 import com.example.alpaki.presentation.util.isPhoneValid
+import com.example.data.api.BRANDS_LIST
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_profile.*
 import kotlinx.android.synthetic.main.fragment_register.*
-import kotlinx.android.synthetic.main.fragment_register.layoutTextEmail
+import kotlinx.android.synthetic.main.item_spinner.*
 
 @AndroidEntryPoint
 class RegisterFragment : BaseFragment<FragmentRegisterBinding>() {
@@ -41,8 +47,37 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>() {
 
         buttonNext.setOnClickListener {
             cleanErrors()
+            registerViewModel.brand.value = layoutTextBrand.selectedItem.toString()
             if (isRegisterFormsCorrect()) registerViewModel.register()
         }
+        setupViewLiveDataObservers()
+        layoutTextBrand.adapter = ArrayAdapter(requireContext(), R.layout.item_spinner, R.id.textViewBrand, BRANDS_LIST)
+
+    }
+
+    private fun setupViewLiveDataObservers() {
+        with(registerViewModel) {
+            success.observe(viewLifecycleOwner, Observer { state ->
+                if (state is State.Success) {
+                    onRegisterSuccess()
+                }
+            })
+            error.observe(viewLifecycleOwner, Observer { state ->
+                if (state is State.Error) {
+                    onRegisterError()
+                }
+            })
+        }
+    }
+
+    private fun onRegisterSuccess() = openMyProfileFragment()
+
+    private fun onRegisterError() {
+        layoutTextName.error = getString(R.string.text_error_register)
+        layoutTextSurname.error = getString(R.string.text_error_register)
+        layoutTextPhone.error = getString(R.string.text_error_register)
+        layoutTextEmail.error = getString(R.string.text_error_register)
+        layoutTextPasswordRegister.error = getString(R.string.text_error_register)
     }
 
     private fun isRegisterFormsCorrect(): Boolean {
@@ -56,10 +91,10 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>() {
                     getString(R.string.text_error_wrong_phone)
                 email.value.isEmailValid().not() -> layoutTextEmail.error =
                     getString(R.string.text_error_wrong_email)
-                password.value.isPasswordValid() -> layoutTextPasswordRegister.error =
+                password.value.isPasswordValid().not() -> layoutTextPasswordRegister.error =
                     getString(R.string.text_error_missing_field)
-                activationCode.value.isNullOrEmpty() -> layoutTextActivationCode.error =
-                    getString(R.string.text_error_missing_field)
+                code.value.isCodeValid().not() -> layoutTextActivationCode.error =
+                    getString(R.string.text_error_wrong_code)
                 else -> return true
             }
             return false
@@ -74,4 +109,6 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>() {
         layoutTextPasswordRegister.isErrorEnabled = false
         layoutTextActivationCode.isErrorEnabled = false
     }
+
+    private fun openMyProfileFragment() = findNavController().navigate(R.id.myProfileFragment)
 }

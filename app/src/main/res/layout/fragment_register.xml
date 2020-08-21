@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.alpaki.presentation.fragments.RegisterViewModel" />
+            type="com.example.alpaki.presentation.register.RegisterViewModel" />
     </data>
 
     <ScrollView
@@ -81,6 +81,18 @@
                     android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <com.tiper.MaterialSpinner
+                android:id="@+id/layoutTextBrand"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:theme="@style/TextInputLayout"
+                android:hint="@string/hint_register_brand"
+                android:paddingHorizontal="@dimen/padding_xxsmall"
+                android:layout_marginTop="@dimen/margin_xsmall"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/layoutTextSurname"/>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/layoutTextPhone"
                 android:layout_width="0dp"
@@ -89,7 +101,7 @@
                 android:theme="@style/TextInputLayout"
                 app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
                 app:layout_constraintStart_toStartOf="@id/guidelineStart"
-                app:layout_constraintTop_toBottomOf="@+id/layoutTextSurname">
+                app:layout_constraintTop_toBottomOf="@+id/layoutTextBrand">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextPhone"
@@ -156,7 +168,7 @@
                     android:imeOptions="actionDone"
                     android:layout_height="wrap_content"
                     android:hint="@string/hint_register_activation_code"
-                    android:text="@={viewModel.activationCode}"
+                    android:text="@={viewModel.code}"
                     android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
 
