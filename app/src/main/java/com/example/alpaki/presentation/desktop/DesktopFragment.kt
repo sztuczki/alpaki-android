@@ -106,6 +106,9 @@ class DesktopFragment : BaseFragment<FragmentDesktopBinding>() {
                 dreamsAdapter.submitList(state.data)
             }
         })
+        viewModel.categories.observe(viewLifecycleOwner, Observer { state ->
+            if (state is State.Success) categoriesAdapter.submitList(state.data)
+        })
     }
 
     private fun onCategoryItemClick(item: DreamCategory) = Unit
