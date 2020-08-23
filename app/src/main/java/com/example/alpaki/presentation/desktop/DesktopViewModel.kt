@@ -2,7 +2,6 @@
 
 package com.example.alpaki.presentation.desktop
 
-import android.util.Log
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import com.example.alpaki.core.livedata.wrappers.State
@@ -19,6 +18,9 @@ class DesktopViewModel @ViewModelInject constructor(
 
     private val _dreams = MutableLiveData<State<List<Dream>>>()
     val dreams: LiveData<State<List<Dream>>> = _dreams
+
+    private val _categories = MutableLiveData<State<List<DreamCategory>>>()
+    val categories: LiveData<State<List<DreamCategory>>> = _categories
 
     private val _isLoading = MediatorLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
@@ -37,11 +39,11 @@ class DesktopViewModel @ViewModelInject constructor(
     )
 
     private fun onGetCategoriesSuccess(categories: List<DreamCategory>) {
-        // Pass to LiveData and to DreamCategoriesAdapter
-        Log.d("category", "categories -> $categories")
+        _categories.value = State.Success(categories)
     }
 
     private fun onGetCategoriesError(throwable: Throwable) {
+        throw throwable
     }
 
     fun getDreamers() = getDreamers(

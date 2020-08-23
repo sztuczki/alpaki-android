@@ -5,6 +5,6 @@ data class DreamApiModel(
     val displayName: String?,
     val age: Int?,
     val dreamUrl: String?,
-    val dreamCategory: CategoryApiModel?,
+    val dreamCategory: DreamCategoryApiModel?,
     val tags: String?
 )

@@ -13,7 +13,7 @@ import com.example.alpaki.presentation.desktop.adapters.DesktopCategoriesAdapter
 import com.example.alpaki.presentation.desktop.adapters.DesktopDreamsAdapter
 import com.example.alpaki.presentation.desktop.adapters.DesktopLatestAdapter
 import com.example.alpaki.presentation.desktop.adapters.DesktopSponsorsAdapter
-import com.example.domain.models.Category
+import com.example.domain.models.DreamCategory
 import com.example.domain.models.Sponsor
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_desktop.*
@@ -33,6 +33,7 @@ class DesktopFragment : BaseFragment<FragmentDesktopBinding>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel.getDreamers()
+        viewModel.getCategories()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -107,7 +108,7 @@ class DesktopFragment : BaseFragment<FragmentDesktopBinding>() {
         })
     }
 
-    private fun onCategoryItemClick(item: Category) = Unit
+    private fun onCategoryItemClick(item: DreamCategory) = Unit
 
     private fun onSponsorItemClick(item: Sponsor) = Unit
 

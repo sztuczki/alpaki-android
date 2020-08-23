@@ -5,6 +5,6 @@ data class Dream(
     val displayName: String?,
     val age: Int,
     val dreamUrl: String?,
-    val dreamCategory: Category?,
+    val dreamCategory: DreamCategory?,
     val tags: String?
 )
