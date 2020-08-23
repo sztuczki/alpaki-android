@@ -32,7 +32,7 @@ class DesktopFragment : BaseFragment<FragmentDesktopBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel.getDreamers()
+        viewModel.getDreams()
         viewModel.getCategories()
     }
 

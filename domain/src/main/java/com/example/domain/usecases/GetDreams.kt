@@ -5,12 +5,12 @@ import com.example.domain.repositories.DreamersRepository
 import com.example.domain.usecases.base.UseCase
 import javax.inject.Inject
 
-class GetDreamers @Inject constructor(
+class GetDreams @Inject constructor(
     private val dreamersRepository: DreamersRepository
-) : UseCase<GetDreamers.Params?, List<Dream>>() {
+) : UseCase<GetDreams.Params?, List<Dream>>() {
 
     override suspend fun run(params: Params?): List<Dream> {
-        return dreamersRepository.getDreamers(params)
+        return dreamersRepository.getDreams(params)
     }
 
     data class Params(

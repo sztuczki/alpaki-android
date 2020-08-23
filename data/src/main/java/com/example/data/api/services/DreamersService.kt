@@ -4,20 +4,20 @@ import com.example.data.api.endpoints.DreamsEndpoint
 import com.example.data.api.services.base.ApiService
 import com.example.data.mappers.toDomainList
 import com.example.domain.models.Dream
-import com.example.domain.usecases.GetDreamers
+import com.example.domain.usecases.GetDreams
 import javax.inject.Inject
 
 interface DreamersService {
 
-    suspend fun getDreamers(params: GetDreamers.Params?): List<Dream>
+    suspend fun getDreams(params: GetDreams.Params?): List<Dream>
 }
 
 class DreamersApiService @Inject constructor(
     private val endpoint: DreamsEndpoint
 ) : ApiService(), DreamersService {
 
-    override suspend fun getDreamers(params: GetDreamers.Params?): List<Dream> =
-        endpoint.getDreamers(
+    override suspend fun getDreams(params: GetDreams.Params?): List<Dream> =
+        endpoint.getDreams(
             params?.searchName,
             params?.gender,
             params?.status,
