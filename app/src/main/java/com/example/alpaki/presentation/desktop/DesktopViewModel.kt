@@ -8,7 +8,7 @@ import com.example.alpaki.core.livedata.wrappers.State
 import com.example.domain.models.Dream
 import com.example.domain.models.DreamCategory
 import com.example.domain.usecases.GetCategories
-import com.example.domain.usecases.base.GetDreamers
+import com.example.domain.usecases.GetDreamers
 import com.example.domain.usecases.base.None
 
 class DesktopViewModel @ViewModelInject constructor(

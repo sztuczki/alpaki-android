@@ -2,27 +2,35 @@ package com.example.alpaki.presentation.profile
 
 import android.os.Bundle
 import android.view.View
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.alpaki.DreamModel
 import com.example.alpaki.R
+import com.example.alpaki.core.livedata.wrappers.State
 import com.example.alpaki.core.views.base.BaseFragment
 import com.example.alpaki.databinding.FragmentMyProfileBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MyProfileFragment : BaseFragment<FragmentMyProfileBinding>() {
 
     val testImageUrl =
-        "https://lh3.googleusercontent.com/proxy/yB6IHKUYfKwZ_HbB2tRSqlXAgszjdWcRb30kvavvWo_CZXQ_KMJ1VHhtmXnb5t_Pp-Ar84HifAYkhZvmhXKgwI_sTg1wWuLSfSordq7g7fQsoNEs8gCOsiuH_BOJY9pDW028oRoVUz37z9TrQg"
+        "https://i.imgur.com/H357yaH.jpg"
     val testActive = false
 
     override val layoutId: Int = R.layout.fragment_my_profile
+    private val myProfileViewModel: MyProfileViewModel by viewModels()
 
     lateinit var doneDreamsRecyclerViewAdapter: DreamsRecyclerViewAdapter
     lateinit var activeDreamsRecyclerViewAdapter: DreamsRecyclerViewAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.tmp = this
-
+        with(binding) {
+            tmp = this@MyProfileFragment
+            viewModel = myProfileViewModel
+        }
         setupRecyclersAdapters()
         activeDreamsRecyclerViewAdapter.submitList(
             listOf(
@@ -52,7 +60,20 @@ class MyProfileFragment : BaseFragment<FragmentMyProfileBinding>() {
                 )
             )
         )
+        setupViewLiveDataObservers()
     }
+
+    private fun setupViewLiveDataObservers() {
+        with(myProfileViewModel) {
+            success.observe(viewLifecycleOwner, androidx.lifecycle.Observer { state ->
+                if (state is State.Success) {
+                    onLogoutSuccess()
+                }
+            })
+        }
+    }
+
+    private fun onLogoutSuccess() = findNavController().navigate(R.id.profileFragment)
 
     private fun setupRecyclersAdapters() {
         doneDreamsRecyclerViewAdapter = DreamsRecyclerViewAdapter()
@@ -65,5 +86,13 @@ class MyProfileFragment : BaseFragment<FragmentMyProfileBinding>() {
             layoutManager = LinearLayoutManager(context)
             adapter = activeDreamsRecyclerViewAdapter
         }
+    }
+
+    override fun onDestroyView() {
+        with(binding) {
+            doneDreamsRecyclerView.adapter = null
+            activeDreamsRecyclerView.adapter = null
+        }
+        super.onDestroyView()
     }
 }

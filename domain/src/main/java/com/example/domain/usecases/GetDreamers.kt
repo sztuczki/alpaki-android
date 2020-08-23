@@ -1,7 +1,8 @@
-package com.example.domain.usecases.base
+package com.example.domain.usecases
 
 import com.example.domain.models.Dream
 import com.example.domain.repositories.DreamersRepository
+import com.example.domain.usecases.base.UseCase
 import javax.inject.Inject
 
 class GetDreamers @Inject constructor(

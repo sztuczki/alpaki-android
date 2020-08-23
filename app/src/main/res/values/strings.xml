@@ -24,9 +24,12 @@
 
     <!--textInputLayouts errors-->
     <string name="text_error_missing_field">Pole nie może być puste</string>
+    <string name="text_error_wrong_code">Podano nieprawidłowy kod aktywacyjny</string>
     <string name="text_error_wrong_email">Podano nieprawidłowy adres email</string>
     <string name="text_error_wrong_phone">Podano nieprawidłowy numer telefonu</string>
     <string name="text_error_wrong_password">Hasło musi mieć minimum 8 znaków</string>
+    <string name="text_error_login">Logowanie się nie powiodło</string>
+    <string name="text_error_register">Rejestracja się nie powiodła</string>
 
     <!--profile fragment-->
     <string name="text_profile_header_title">Zaloguj się</string>
@@ -53,6 +56,7 @@
     <string name="hint_register_name">Imię</string>
     <string name="hint_register_surname">Nazwisko</string>
     <string name="hint_register_phone">Nr telefonu</string>
+    <string name="hint_register_brand">Wybierz swój oddział</string>
     <string name="hint_register_email" tools:ignore="Typos">Adres email</string>
     <string name="hint_register_password">Hasło</string>
     <string name="hint_register_activation_code">Kod aktywacyjny</string>
