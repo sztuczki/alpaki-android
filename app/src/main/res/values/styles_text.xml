@@ -47,6 +47,14 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="Text.H2.Accent">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="Text.H2.Accent.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="Text.H2.Eclipse">
         <item name="color">@color/eclipse</item>
     </style>
@@ -70,6 +78,10 @@
         <item name="android:fontFamily">@font/roboto_medium</item>
     </style>
 
+    <style name="Text.H3.Eclipse">
+        <item name="android:textColor">@color/eclipse</item>
+    </style>
+
     <!-- H5 -->
     <style name="Text.H5">
         <item name="android:textSize">@dimen/text_h5</item>
@@ -83,6 +95,18 @@
 
     <style name="Text.H5.Primary.Roboto.Regular">
         <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="Text.H5.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.H5.White.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.H5.White.Bold.Allcaps">
+        <item name="android:textAllCaps">true</item>
     </style>
 
     <style name="Text.H5.Secondary">
@@ -113,6 +137,14 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="Text.H5.Eclipse">
+        <item name="android:textColor">@color/eclipse</item>
+    </style>
+
+    <style name="Text.H5.Eclipse.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <!-- H6 -->
     <style name="Text.H6">
         <item name="android:textSize">@dimen/text_h5</item>
@@ -128,11 +160,24 @@
         <item name="android:fontFamily">@font/roboto</item>
     </style>
 
-    <style name="Text.H6.Accent">
+    <style name="Text.H6.Dimgray">
+        <item name="android:textColor">@color/dimGray</item>
+    </style>
+
+    <!-- H7 -->
+    <style name="Text.H7">
+        <item name="android:textSize">@dimen/text_h7</item>
+    </style>
+
+    <style name="Text.H7.Accent">
         <item name="android:textColor">@color/colorAccent</item>
     </style>
 
-    <style name="Text.H6.Accent.AllCaps">
+    <style name="Text.H7.Accent.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.H7.Accent.Bold.AllCaps">
         <item name="android:textAllCaps">true</item>
     </style>
 </resources>
