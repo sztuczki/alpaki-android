@@ -20,4 +20,6 @@ class TokenRepositoryImpl @Inject constructor(
 
     override suspend fun clearToken() = preferences.clear()
 
+    override suspend fun getToken() =
+        preferences.getString(TOKEN_KEY)
 }

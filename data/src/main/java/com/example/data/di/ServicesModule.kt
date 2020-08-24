@@ -6,6 +6,8 @@ import com.example.data.api.services.DreamersApiService
 import com.example.data.api.services.DreamersService
 import com.example.data.api.services.TokenApiService
 import com.example.data.api.services.TokenService
+import com.example.data.api.services.UserApiService
+import com.example.data.api.services.UserService
 import com.example.data.api.services.VolunteerApiService
 import com.example.data.api.services.VolunteerService
 import dagger.Binds
@@ -32,4 +34,7 @@ interface ServicesBindings {
 
     @Binds
     fun bindVolunteerService(service: VolunteerApiService): VolunteerService
+
+    @Binds
+    fun bindUserService(service: UserApiService): UserService
 }

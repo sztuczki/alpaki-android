@@ -1,7 +1,9 @@
 package com.example.alpaki.presentation.profile
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -10,6 +12,7 @@ import com.example.alpaki.R
 import com.example.alpaki.core.livedata.wrappers.State
 import com.example.alpaki.core.views.base.BaseFragment
 import com.example.alpaki.databinding.FragmentMyProfileBinding
+import com.example.alpaki.presentation.main.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -21,9 +24,19 @@ class MyProfileFragment : BaseFragment<FragmentMyProfileBinding>() {
 
     override val layoutId: Int = R.layout.fragment_my_profile
     private val myProfileViewModel: MyProfileViewModel by viewModels()
+    private val mainViewModel: MainViewModel by viewModels()
 
     lateinit var doneDreamsRecyclerViewAdapter: DreamsRecyclerViewAdapter
     lateinit var activeDreamsRecyclerViewAdapter: DreamsRecyclerViewAdapter
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        mainViewModel.checkUser()
+        return super.onCreateView(inflater, container, savedInstanceState)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -60,6 +73,7 @@ class MyProfileFragment : BaseFragment<FragmentMyProfileBinding>() {
                 )
             )
         )
+        setupMainViewLiveDataObservers()
         setupViewLiveDataObservers()
     }
 
@@ -68,6 +82,19 @@ class MyProfileFragment : BaseFragment<FragmentMyProfileBinding>() {
             success.observe(viewLifecycleOwner, androidx.lifecycle.Observer { state ->
                 if (state is State.Success) {
                     onLogoutSuccess()
+                }
+            })
+        }
+    }
+
+    private fun setupMainViewLiveDataObservers() {
+        with(mainViewModel) {
+            user.observe(viewLifecycleOwner, androidx.lifecycle.Observer { user ->
+                if (user is State.Success) {
+                    with(binding) {
+                        userDetails = user.data
+                        invalidateAll()
+                    }
                 }
             })
         }

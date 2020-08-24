@@ -12,6 +12,10 @@
         <variable
             name="viewModel"
             type="com.example.alpaki.presentation.profile.MyProfileViewModel" />
+
+        <variable
+            name="userDetails"
+            type="com.example.domain.models.UserDetails" />
     </data>
 
     <androidx.core.widget.NestedScrollView
@@ -72,9 +76,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Jan Kowalski"
                 android:textAppearance="@style/Text.H1.Primary.Roboto.Regular.Bold"
                 android:textColor="@color/eclipse"
+                app:bindNameSurname="@{userDetails}"
                 tools:text="Jan Kowalski" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -105,7 +109,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_xlarge"
-                android:text="jankowlaski@gmail.com"
+                android:text="@{userDetails.email}"
                 tools:text="jankowalski@gmail.com" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -113,7 +117,7 @@
                 style="@style/TextView.MyProfileInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="+48 2137420"
+                android:text="@{userDetails.phoneNumber}"
                 tools:text="+48 213 742 000" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -121,16 +125,8 @@
                 style="@style/TextView.MyProfileInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Warszawa"
+                android:text="@{userDetails.brand}"
                 tools:text="Warszawa" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/myProfileCoordinator"
-                style="@style/TextView.MyProfileInfo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Beata Sadowska"
-                tools:text="Beata Sadowska" />
 
             <View
                 style="@style/DecorationLine"
