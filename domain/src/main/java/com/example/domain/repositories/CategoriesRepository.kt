@@ -6,7 +6,5 @@ interface CategoriesRepository {
 
     suspend fun getCategories(): List<DreamCategory>
 
-    suspend fun saveCategories()
-
     suspend fun deleteCategory(category: DreamCategory)
 }

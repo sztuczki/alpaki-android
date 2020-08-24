@@ -7,18 +7,18 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.alpaki.databinding.ItemDesktopLatestBinding
 import com.example.alpaki.presentation.desktop.adapters.DesktopLatestAdapter.LatestDreamViewHolder
-import com.example.domain.models.Dreamer
+import com.example.domain.models.Dream
 
-class DesktopLatestAdapter() : ListAdapter<Dreamer, LatestDreamViewHolder>(ItemCallback) {
+class DesktopLatestAdapter() : ListAdapter<Dream, LatestDreamViewHolder>(ItemCallback) {
 
     companion object {
-        private val ItemCallback = object : DiffUtil.ItemCallback<Dreamer>() {
+        private val ItemCallback = object : DiffUtil.ItemCallback<Dream>() {
 
-            override fun areItemsTheSame(oldItem: Dreamer, newItem: Dreamer): Boolean {
+            override fun areItemsTheSame(oldItem: Dream, newItem: Dream): Boolean {
                 return oldItem.dreamId == newItem.dreamId
             }
 
-            override fun areContentsTheSame(oldItem: Dreamer, newItem: Dreamer): Boolean {
+            override fun areContentsTheSame(oldItem: Dream, newItem: Dream): Boolean {
                 return oldItem == newItem
             }
         }
@@ -38,15 +38,17 @@ class DesktopLatestAdapter() : ListAdapter<Dreamer, LatestDreamViewHolder>(ItemC
         private val binding: ItemDesktopLatestBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(dreamer: Dreamer) {
-            binding.dreamer = dreamer
+        fun bind(dream: Dream) {
+            binding.dream = dream
             val formattedName: String = StringBuilder().run {
-                append(dreamer.fullName)
-                if (dreamer.fullName.isNotEmpty()) append(" ")
-                append("(${dreamer.age} l.)")
+                if (dream.displayName?.isNotEmpty() == true) {
+                    append(dream.displayName)
+                    append(" ")
+                }
+                append("(${dream.age} l.)")
                 toString()
             }
-            binding.textItemDesktopLatestDreamer.text = formattedName
+            binding.textItemDesktopLatestName.text = formattedName
         }
     }
 }
