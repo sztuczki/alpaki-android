@@ -127,31 +127,6 @@
                 tools:listitem="@layout/item_desktop_sponsor" />
 
             <TextView
-                android:id="@+id/textDesktopHeaderDreamers"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_medium"
-                android:layout_marginTop="@dimen/margin_xlarge"
-                android:layout_marginEnd="@dimen/margin_medium"
-                android:text="@string/text_desktop_header_dreamers"
-                android:textAppearance="@style/Text.H3.Primary.Roboto.Medium"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rvDesktopSponsors" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvDesktopDreamers"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_medium"
-                android:clipToPadding="false"
-                android:orientation="horizontal"
-                android:paddingHorizontal="@dimen/padding_medium"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintTop_toBottomOf="@+id/textDesktopHeaderDreamers"
-                tools:listitem="@layout/item_desktop_person" />
-
-            <TextView
                 android:id="@+id/textDesktopHeaderVolunteers"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -162,7 +137,7 @@
                 android:textAppearance="@style/Text.H3.Primary.Roboto.Medium"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rvDesktopDreamers" />
+                app:layout_constraintTop_toBottomOf="@+id/rvDesktopSponsors" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvDesktopVolunteers"

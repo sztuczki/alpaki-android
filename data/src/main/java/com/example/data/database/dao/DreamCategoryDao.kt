@@ -6,11 +6,11 @@ import com.example.data.database.entites.DreamCategoryEntity
 @Dao
 interface DreamCategoryDao {
     @Query("SELECT * FROM DreamCategory")
-    fun getAll(): List<DreamCategoryEntity>
+    suspend fun getAll(): List<DreamCategoryEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(dreamCategoryEntity: DreamCategoryEntity)
+    suspend fun insert(categoryEntity: DreamCategoryEntity)
 
     @Delete
-    fun delete(dreamCategoryEntity: DreamCategoryEntity)
+    suspend fun delete(categoryEntity: DreamCategoryEntity)
 }

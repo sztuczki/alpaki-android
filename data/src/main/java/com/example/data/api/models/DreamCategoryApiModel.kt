@@ -1,10 +1,6 @@
 package com.example.data.api.models
 
-import com.google.gson.annotations.SerializedName
-
-class DreamCategoryApiModel(
-    @SerializedName("categoryId")
+data class DreamCategoryApiModel(
     val dreamCategoryId: Long,
-    @SerializedName("categoryName")
-    val categoryName: String?
+    val dreamCategoryName: String?
 )

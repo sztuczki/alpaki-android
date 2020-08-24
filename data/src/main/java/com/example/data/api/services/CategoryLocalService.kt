@@ -8,11 +8,11 @@ import javax.inject.Inject
 class CategoriesLocalService @Inject constructor(
     private val dreamCategoryDao: DreamCategoryDao
 ) {
-    fun insertCategory(dreamCategory: DreamCategory) =
+    suspend fun insertCategory(dreamCategory: DreamCategory) =
         dreamCategoryDao.insert(dreamCategory.toEntity())
 
-    fun getAllCategories() = dreamCategoryDao.getAll()
+    suspend fun getAllCategories() = dreamCategoryDao.getAll()
 
-    fun deleteCategory(dreamCategory: DreamCategory) =
+    suspend fun deleteCategory(dreamCategory: DreamCategory) =
         dreamCategoryDao.delete(dreamCategory.toEntity())
 }

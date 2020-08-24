@@ -6,8 +6,8 @@
     <data>
 
         <variable
-            name="dreamer"
-            type="com.example.domain.models.Dreamer" />
+            name="dream"
+            type="com.example.domain.models.Dream" />
 
         <variable
             name="isFavourite"
@@ -49,7 +49,7 @@
             tools:text="Komputer" />
 
         <TextView
-            android:id="@+id/textItemDesktopLatestDreamer"
+            android:id="@+id/textItemDesktopLatestName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_xsmall"
@@ -68,14 +68,14 @@
             android:ellipsize="end"
             android:paddingHorizontal="@dimen/padding_xsmall"
             android:singleLine="true"
-            android:text="Placeholder category"
+            android:text="@{ dream.dreamCategory.dreamCategoryName }"
             android:textAppearance="@style/Text.H5.Secondary.Roboto.Regular"
             android:textSize="10sp"
             app:layout_constrainedWidth="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textItemDesktopLatestDreamer"
+            app:layout_constraintTop_toBottomOf="@+id/textItemDesktopLatestName"
             tools:text="@string/text_desktop_category_gift" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
