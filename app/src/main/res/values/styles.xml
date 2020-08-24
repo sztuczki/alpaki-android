@@ -21,6 +21,18 @@
         <item name="android:backgroundTint">@color/eclipse</item>
     </style>
 
+    <style name="Button.Text.Color.DimGray" parent="TextAppearance.AppCompat.Widget.Button.Colored">
+        <item name="android:background">@drawable/background_button_dimgray</item>
+        <item name="android:textAppearance">@style/Text.H5.White.Bold.Allcaps</item>
+        <item name="android:textColor">@color/whiteSmoke</item>
+    </style>
+
+    <style name="Button.Text.Color.White" parent="TextAppearance.AppCompat.Widget.Button.Colored">
+        <item name="android:background">@drawable/background_button_white</item>
+        <item name="android:textAppearance">@style/Text.H5.Accent.Roboto.Regular.Bold</item>
+        <item name="android:textColor">@color/malachite</item>
+    </style>
+
     <style name="TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
         <item name="boxBackgroundColor">@color/whiteSmoke</item>
         <item name="hintTextAppearance">@style/TextInputLayout.HintText</item>
@@ -49,8 +61,8 @@
 
     <style name="TextView.ActiveStatus" parent="TextAppearance.AppCompat">
         <item name="android:textColor">@color/silver</item>
-        <item name="android:layout_marginStart">@dimen/margin_xsmall</item>
-        <item name="android:layout_marginEnd">@dimen/margin_xsmall</item>
+        <item name="android:layout_marginStart">@dimen/margin_xxsmall</item>
+        <item name="android:layout_marginEnd">@dimen/margin_xxsmall</item>
         <item name="fontFamily">@font/roboto</item>
         <item name="android:gravity">center</item>
     </style>
@@ -61,7 +73,7 @@
         <item name="android:layout_marginEnd">@dimen/margin_medium</item>
         <item name="android:textColor">@color/dimGray</item>
         <item name="android:textSize">@dimen/text_h4</item>
-        <item name="android:layout_marginTop">@dimen/margin_xsmall</item>
+        <item name="android:layout_marginTop">@dimen/margin_xxsmall</item>
         <item name="fontFamily">@font/roboto</item>
         <item name="android:gravity">center</item>
     </style>

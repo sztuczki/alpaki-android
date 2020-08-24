@@ -7,6 +7,7 @@
     <dimen name="text_h4">16sp</dimen>
     <dimen name="text_h5">14sp</dimen>
     <dimen name="text_h6">12sp</dimen>
+    <dimen name="text_h7">10sp</dimen>
 
     <dimen name="padding_xxlarge">64dp</dimen>
     <dimen name="padding_xlarge">32dp</dimen>
@@ -22,8 +23,9 @@
     <dimen name="margin_xmedium">20dp</dimen>
     <dimen name="margin_medium">16dp</dimen>
     <dimen name="margin_small">12dp</dimen>
-    <dimen name="margin_xsmall">8dp</dimen>
-    <dimen name="margin_xxsmall">4dp</dimen>
+    <dimen name="margin_xsmall">10dp</dimen>
+    <dimen name="margin_xxsmall">8dp</dimen>
+    <dimen name="margin_xxxsmall">4dp</dimen>
 
     <dimen name="elevation_action_bar">4dp</dimen>
     <dimen name="padding_title_bar">20dp</dimen>

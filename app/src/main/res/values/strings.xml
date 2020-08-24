@@ -63,5 +63,11 @@
     <string name="more_text_done_dream_card_view">WIĘCEJ</string>
 
     <!--tasks fragment-->
-    <string name="show_more">Więcej</string>
+    <string name="hint_show_more">Więcej</string>
+    <string name="example_task_description">
+        Wiesz już kto będzie Twoim Marzycielem. Pierwszym krokiem na drodze do realizacji jego marzenia jest przygotowanie tzw. „lodołamacza”. Skontaktuj się z rodzicami Marzyciela i dowiedz się jakie są jego zainteresowania, hobby i co lubi. Na tej podstawie zdecyduj jaki prezent pozwoli Ci zdobyć zaufanie Twojego Marzyciela i nawiązać z nim nić porozumienia. Teraz pozostały już tylko zakupy i gotowe! Pamiętaj aby zachowywać dowody wszystkich transakcji dokonanych w trakcie realizacji marzenia
+    </string>
+    <string name="button_show_dream">Zobacz marzenie</string>
+    <string name="button_all_tasks_done">Wszystkie zadania zostały zrobione</string>
+    <string name="button_all_tasks">Wszystkie zadania</string>
 </resources>
