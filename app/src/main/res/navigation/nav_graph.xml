@@ -36,7 +36,7 @@
 
     <fragment
         android:id="@+id/myProfileFragment"
-        android:name="com.example.alpaki.presentation.profile.MyProfileFragment"
+        android:name="com.example.alpaki.presentation.myProfile.MyProfileFragment"
         android:label="MyProfileFragment" />
 
     <fragment

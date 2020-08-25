@@ -40,11 +40,13 @@
                 android:id="@+id/done_dream_more_about"
                 style="@style/Text.H6.Primary.Roboto"
                 android:layout_width="wrap_content"
-                android:gravity="center"
                 android:layout_height="0dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
                 android:text="@string/more_text_done_dream_card_view"
                 android:textColor="@color/pigmentGreen"
-                app:layout_constraintBottom_toTopOf="@id/done_dream_dreamer_image_image_view"
+                app:layout_constraintBottom_toTopOf="@id/imageViewDreamer"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tootls:text="WIĘCEJ" />
@@ -56,36 +58,51 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="@dimen/padding_xsmall"
                 android:paddingEnd="@dimen/padding_xsmall"
-                android:text="@{item.dreamerName + ` / ` + String.valueOf(item.age) + ` lat`}"
+                android:text="@{item.dreamerName + ` / ` + String.valueOf(item.age) + ` lat /` + item.dreamerCity}"
                 android:textColor="@color/eclipse"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/done_dream_name_text_view"
-                tootls:text="Małgosia / 8 lat" />
+                tootls:text="Małgosia / 8 lat / Warszawa" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/done_dream_category"
                 style="@style/Text.H6.Primary.Roboto"
-                android:background="@drawable/round_corners_drawable"
-                android:layout_marginTop="@dimen/margin_medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:background="@drawable/round_corners_drawable"
+                android:gravity="center"
                 android:padding="@dimen/margin_xsmall"
                 android:text="@{item.categoryName}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/done_dream_dreamer_age_and_name_text_view"
                 tootls:text="CHCĘ POJECHAĆ" />
 
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textPercentageDone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{item.dreamPercent + `%`}"
+                android:textAppearance="@style/Text.H2.Accent.Roboto.Regular"
+                android:textColor="@color/pigmentGreen"
+                android:textStyle="bold"
+                android:layout_marginEnd="@dimen/margin_medium"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewDreamer"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewDreamer"
+                app:layout_constraintTop_toTopOf="@+id/imageViewDreamer"
+                tootls:text="10%" />
+
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/done_dream_dreamer_image_image_view"
+                android:id="@+id/imageViewDreamer"
                 urlImage="@{item.imageUrl}"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_marginEnd="@dimen/margin_medium"
                 android:layout_marginTop="@dimen/margin_medium"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginEnd="@dimen/margin_medium"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/done_dream_name_text_view" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

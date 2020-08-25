@@ -7,11 +7,11 @@
 
         <variable
             name="tmp"
-            type="com.example.alpaki.presentation.profile.MyProfileFragment" />
+            type="com.example.alpaki.presentation.myProfile.MyProfileFragment" />
 
         <variable
             name="viewModel"
-            type="com.example.alpaki.presentation.profile.MyProfileViewModel" />
+            type="com.example.alpaki.presentation.myProfile.MyProfileViewModel" />
 
         <variable
             name="userDetails"

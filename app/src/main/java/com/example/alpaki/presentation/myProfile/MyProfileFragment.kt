@@ -1,4 +1,4 @@
-package com.example.alpaki.presentation.profile
+package com.example.alpaki.presentation.myProfile
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.alpaki.DreamModel
+import com.example.data.api.models.DreamModel
 import com.example.alpaki.R
 import com.example.alpaki.core.livedata.wrappers.State
 import com.example.alpaki.core.views.base.BaseFragment
@@ -55,7 +55,8 @@ class MyProfileFragment : BaseFragment<FragmentMyProfileBinding>() {
                     8,
                     "Warszawa",
                     10,
-                    testImageUrl
+                    testImageUrl,
+                    ""
                 )
             )
         )
@@ -69,7 +70,8 @@ class MyProfileFragment : BaseFragment<FragmentMyProfileBinding>() {
                     8,
                     "Waszawa",
                     100,
-                    testImageUrl
+                    testImageUrl,
+                    ""
                 )
             )
         )
@@ -103,12 +105,14 @@ class MyProfileFragment : BaseFragment<FragmentMyProfileBinding>() {
     private fun onLogoutSuccess() = findNavController().navigate(R.id.profileFragment)
 
     private fun setupRecyclersAdapters() {
-        doneDreamsRecyclerViewAdapter = DreamsRecyclerViewAdapter()
+        doneDreamsRecyclerViewAdapter =
+            DreamsRecyclerViewAdapter()
         with(binding.doneDreamsRecyclerView) {
             layoutManager = LinearLayoutManager(context)
             adapter = doneDreamsRecyclerViewAdapter
         }
-        activeDreamsRecyclerViewAdapter = DreamsRecyclerViewAdapter()
+        activeDreamsRecyclerViewAdapter =
+            DreamsRecyclerViewAdapter()
         with(binding.activeDreamsRecyclerView) {
             layoutManager = LinearLayoutManager(context)
             adapter = activeDreamsRecyclerViewAdapter
