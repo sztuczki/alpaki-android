@@ -12,6 +12,7 @@
         android:layout_height="wrap_content">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/baseCardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
@@ -42,6 +43,7 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/taskPercentage"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textAppearance="@style/Text.H2.Accent.Bold"
@@ -62,7 +64,7 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/appCompatTextView3"
+                            android:id="@+id/dreamName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textAppearance="@style/Text.H5.Primary.Roboto.Regular"
@@ -71,21 +73,22 @@
                             tools:text="Tęczowy laptop" />
 
                         <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/appCompatTextView2"
+                            android:id="@+id/dreamerInfo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textAppearance="@style/Text.H6.Dimgray"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView3"
+                            app:layout_constraintTop_toBottomOf="@+id/dreamName"
                             tools:text="Mateusz / 14 lat / Warszawa" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.appcompat.widget.AppCompatImageButton
-                        android:id="@+id/showDescription"
+                        android:id="@+id/showAllTasks"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/margin_xmedium"
+                        android:paddingVertical="@dimen/margin_small"
+                        android:paddingHorizontal="@dimen/margin_xmedium"
                         android:background="@android:color/transparent"
                         android:src="@drawable/ic_arrow"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -105,11 +108,11 @@
                         android:id="@+id/showAllTasksView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+                        app:layout_constraintBottom_toTopOf="@+id/taskItemsRecyclerView"
                         app:layout_constraintStart_toStartOf="parent">
 
                         <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/showAllTasksDesciptionButton"
+                            android:id="@+id/showAllTasksDescriptionButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginVertical="@dimen/margin_medium"
@@ -124,16 +127,16 @@
                             android:id="@+id/showAllDescriptions"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/margin_small"
-                            android:layout_marginTop="8dp"
+                            android:paddingHorizontal="@dimen/margin_small"
+                            android:paddingVertical="@dimen/margin_xxsmall"
                             android:background="@android:color/transparent"
                             android:src="@drawable/ic_arrow"
-                            app:layout_constraintStart_toEndOf="@+id/showAllTasksDesciptionButton"
-                            app:layout_constraintTop_toTopOf="@+id/showAllTasksDesciptionButton" />
+                            app:layout_constraintStart_toEndOf="@+id/showAllTasksDescriptionButton"
+                            app:layout_constraintTop_toTopOf="@+id/showAllTasksDescriptionButton" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recyclerView"
+                        android:id="@+id/taskItemsRecyclerView"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_marginHorizontal="@dimen/margin_medium"
@@ -152,14 +155,15 @@
                         android:text="@string/button_all_tasks_done"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+                        app:layout_constraintTop_toBottomOf="@+id/taskItemsRecyclerView" />
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/buttonNext"
+                        android:id="@+id/showDreamButton"
                         style="@style/Button.Text.Color.White"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/margin_medium"
+
                         android:text="@string/button_show_dream"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
