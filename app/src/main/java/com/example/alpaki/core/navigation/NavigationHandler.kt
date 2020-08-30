@@ -79,6 +79,7 @@ class NavigationHandler @Inject constructor() :
             R.id.dreamsFragment -> popBackStack(R.id.desktopFragment, false)
             R.id.tasksFragment -> popBackStack(R.id.desktopFragment, false)
             R.id.profileFragment -> popBackStack(R.id.desktopFragment, false)
+            R.id.myProfileFragment -> popBackStack(R.id.desktopFragment, false)
             R.id.registerFragment -> popBackStack(R.id.profileFragment, false)
             else -> if (popBackStack().not()) activity.finish()
         }

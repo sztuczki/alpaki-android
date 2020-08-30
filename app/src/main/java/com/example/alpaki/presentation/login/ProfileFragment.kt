@@ -9,6 +9,7 @@ import com.example.alpaki.R
 import com.example.alpaki.core.livedata.wrappers.State
 import com.example.alpaki.core.views.base.BaseFragment
 import com.example.alpaki.databinding.FragmentProfileBinding
+import com.example.alpaki.presentation.main.MainViewModel
 import com.example.alpaki.presentation.util.isEmailValid
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_profile.*
@@ -19,6 +20,8 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
     override val layoutId: Int = R.layout.fragment_profile
 
     private val profileViewModel: ProfileViewModel by viewModels()
+
+    private val mainViewModel: MainViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -34,6 +37,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
             if (isEmailPasswordCorrect()) profileViewModel.logIn()
         }
         setupViewLiveDataObservers()
+        checkAlreadyLoggedIn()
     }
 
     private fun setupViewLiveDataObservers() {
@@ -46,6 +50,17 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
             error.observe(viewLifecycleOwner, Observer { state ->
                 if (state is State.Error) {
                     onLoginError()
+                }
+            })
+        }
+    }
+
+    private fun checkAlreadyLoggedIn() {
+        with(mainViewModel) {
+            isLoggedIn()
+            loggedIn.observe(viewLifecycleOwner, Observer { value ->
+                if (value is State.Success && value.data == true) {
+                    openMyProfileFragment()
                 }
             })
         }
