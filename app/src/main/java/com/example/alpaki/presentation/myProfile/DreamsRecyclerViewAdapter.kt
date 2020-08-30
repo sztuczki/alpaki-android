@@ -1,10 +1,10 @@
-package com.example.alpaki.presentation.profile
+package com.example.alpaki.presentation.myProfile
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.RecyclerView
-import com.example.alpaki.DreamModel
+import com.example.data.api.models.DreamModel
 import com.example.alpaki.databinding.ActiveDreamCardViewBinding
 import com.example.alpaki.databinding.DoneDreamCardViewBinding
 
@@ -16,7 +16,9 @@ enum class DreamViewType(val viewType: Int) {
 class DreamsRecyclerViewAdapter :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val listDiffer: AsyncListDiffer<DreamModel> =
-        AsyncListDiffer<DreamModel>(this, MyDiffUtill.TASK_DIFF_UTIL)
+        AsyncListDiffer<DreamModel>(this,
+            MyDiffUtil.TASK_DIFF_UTIL
+        )
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -29,13 +31,16 @@ class DreamsRecyclerViewAdapter :
                     parent,
                     false
                 )
-            ActiveDreamsViewHolder(binding)
+            ActiveDreamsViewHolder(
+                binding
+            )
         } else {
             val binding: DoneDreamCardViewBinding =
                 DoneDreamCardViewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-            DoneDreamsViewHolder(binding)
+            DoneDreamsViewHolder(
+                binding
+            )
         }
-
     }
 
     override fun getItemViewType(position: Int): Int {

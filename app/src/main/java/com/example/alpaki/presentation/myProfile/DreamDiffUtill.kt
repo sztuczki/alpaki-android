@@ -1,10 +1,9 @@
-package com.example.alpaki.presentation.profile
+package com.example.alpaki.presentation.myProfile
 
 import androidx.recyclerview.widget.DiffUtil
-import com.example.alpaki.DreamModel
+import com.example.data.api.models.DreamModel
 
-
-internal object MyDiffUtill {
+internal object MyDiffUtil {
     val TASK_DIFF_UTIL: DiffUtil.ItemCallback<DreamModel> =
         object : DiffUtil.ItemCallback<DreamModel>() {
             override fun areItemsTheSame(

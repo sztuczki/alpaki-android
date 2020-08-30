@@ -51,6 +51,16 @@
         <item name="color">@color/eclipse</item>
     </style>
 
+    <style name="Text.H2.Accent">
+        <item name="color">@color/colorAccent</item>
+    </style>
+
+    <style name="Text.H2.Accent.Roboto" />
+
+    <style name="Text.H2.Accent.Roboto.Regular">
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
     <!-- H3 -->
     <style name="Text.H3">
         <item name="android:textSize">@dimen/text_h3</item>

@@ -1,4 +1,4 @@
-package com.example.alpaki.presentation.profile
+package com.example.alpaki.presentation.myProfile
 
 import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject

@@ -7,7 +7,7 @@
 
         <variable
             name="item"
-            type="com.example.alpaki.DreamModel" />
+            type="com.example.data.api.models.DreamModel" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -40,7 +40,7 @@
                 style="@style/Text.H2.Primary.Roboto.Medium"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@{item.dreamName}"
+                android:text="@{item.title}"
                 android:textColor="@color/eclipse"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="@dimen/padding_xsmall"
                 android:paddingEnd="@dimen/padding_xsmall"
-                android:text="@{item.dreamerName + ` / ` + String.valueOf(item.dreamerAge) + ` lat`}"
+                android:text="@{item.dreamerName + ` / ` + String.valueOf(item.age) + ` lat`}"
                 android:textColor="@color/eclipse"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
